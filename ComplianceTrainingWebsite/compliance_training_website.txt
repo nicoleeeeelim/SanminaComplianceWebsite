@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QA Compliance Training</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Universal Box-Sizing Reset for consistent layout across browsers */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdfdfd; /* Off-white background */
+            color: #212121; /* Dark grey for general text */
+        }
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom animation for button hover */
+        .btn-hover-effect:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 44px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* Floating navigation buttons (Top, End, Next, Prev) */
+        .floating-btn {
+            position: fixed;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #b71c1c; /* Dark Red */
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+            display: none; /* Hidden by default */
+        }
+
+        .floating-btn:hover {
+            background-color: #880e4f; /* Darker Red on hover */
+            transform: translateY(-2px);
+        }
+
+        #backToTopBtn {
+            bottom: 20px;
+            right: 20px;
+        }
+
+        #endOfPageBtn {
+            bottom: 20px;
+            right: 100px; /* Adjusted position to prevent overlap */
+        }
+
+        #prevPageBtn {
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+        }
+
+        #nextPageBtn {
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+
+        /* Accordion styles */
+        .accordion-button {
+            background-color: #d4b89d; /* More visible Brown-Grey */
+            color: #424242; /* Dark grey text */
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: background-color 0.3s ease;
+            font-weight: 600;
+            border-radius: 0.5rem; /* rounded-lg */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion-button:hover {
+            background-color: #c7a98a; /* Slightly darker brown on hover */
+        }
+
+        .accordion-content {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            border-radius: 0.5rem; /* rounded-lg */
+            margin-top: 0.5rem;
+        }
+
+        .accordion-button.active + .accordion-content {
+            max-height: 500px; /* Adjust as needed for content height */
+            padding-top: 18px;
+            padding-bottom: 18px;
+        }
+
+        .accordion-button .icon {
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-button.active .icon {
+            transform: rotate(180deg);
+        }
+
+        /* Flowchart specific styles */
+        .flowchart-node {
+            fill: #d4b89d; /* More visible Brown-Grey background for nodes */
+            stroke: #4e342e; /* Dark Brown border */
+            stroke-width: 1;
+            rx: 8; /* Rounded corners for nodes */
+            ry: 8;
+        }
+        .flowchart-text {
+            fill: #4e342e; /* Dark Brown text */
+            font-size: 12px; /* Smaller font size for flowchart text */
+            font-weight: 600;
+            text-anchor: middle;
+            dominant-baseline: middle;
+        }
+        .flowchart-line {
+            stroke: #4e342e; /* Dark Brown */
+            stroke-width: 2;
+            marker-end: url(#arrowhead); /* Add arrowhead to lines */
+        }
+        /* Redefine arrowhead fill for consistency */
+        #arrowhead polygon {
+            fill: #4e342e;
+        }
+
+
+        /* Highlight for search results */
+        .highlight {
+            background-color: #fff9c4; /* Light yellow */
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-md py-4 px-6 md:px-10 sticky top-0 z-50">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center mb-4 md:mb-0">
+                <!-- Sanmina Logo -->
+                <img src="sanmina logo.png" alt="Sanmina Official Logo" class="h-12 w-auto mr-3">
+                <h1 class="text-2xl font-bold text-red-800">QA Compliance Training</h1>
+            </div>
+            <nav class="flex flex-col md:flex-row items-center">
+                <ul class="flex flex-wrap justify-center space-x-4 md:space-x-8 mb-4 md:mb-0">
+                    <li><a href="#" onclick="showPage('home-about')" class="text-gray-600 hover:text-red-700 font-medium transition duration-300 ease-in-out">Home & About Us</a></li>
+                    <li><a href="#" onclick="showPage('training')" class="text-gray-600 hover:text-red-700 font-medium transition duration-300 ease-in-out">Training Modules</a></li>
+                    <li><a href="#" onclick="showPage('processes')" class="text-gray-600 hover:text-red-700 font-medium transition duration-300 ease-in-out">Training Workflow</a></li>
+                    <li><a href="#" onclick="showPage('innovation')" class="text-gray-600 hover:text-red-700 font-medium transition duration-300 ease-in-out">Innovation</a></li>
+                    <li><a href="#" onclick="showPage('activities')" class="text-gray-600 hover:text-red-700 font-medium transition duration-300 ease-in-out">Team Activities</a></li>
+                    <li><a href="#" onclick="showPage('contact')" class="text-gray-600 hover:text-red-700 font-medium transition duration-300 ease-in-out">Contact</a></li>
+                </ul>
+                <div class="flex items-center space-x-2">
+                    <input type="text" id="searchInput" placeholder="Search..." class="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500">
+                    <button onclick="performSearch()" class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300 ease-in-out">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area - Page Containers -->
+    <div id="page-content">
+        <!-- Home & About Us Combined Section -->
+        <section id="home-about" class="page-section active" data-page="home-about">
+            <!-- Home Content -->
+            <div class="bg-gradient-to-r from-red-800 to-black text-white py-20 px-6 md:px-10 text-center rounded-b-lg shadow-lg">
+                <div class="container mx-auto max-w-4xl">
+                    <h2 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">Empowering Quality Through Compliance Training</h2>
+                    <p class="text-lg md:text-xl mb-8 opacity-90">Dedicated to upholding the highest standards of quality and regulatory compliance in all Sanmina operations.</p>
+                    <a href="#" onclick="showPage('training')" class="inline-block bg-white text-red-700 hover:bg-red-100 font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition duration-300 ease-in-out btn-hover-effect">Explore Training</a>
+                </div>
+            </div>
+
+            <!-- About Us Content -->
+            <div class="py-16 px-6 md:px-10 bg-white rounded-lg shadow-md mx-auto my-10 max-w-6xl">
+                <div class="container mx-auto">
+                    <h3 class="text-3xl font-bold text-center text-red-800 mb-10">About Our Quality Assurance Department</h3>
+                    <div class="flex flex-col md:flex-row items-start md:space-x-10 mb-8">
+                        <div class="md:w-1/2">
+                            <p class="text-lg leading-relaxed mb-4">
+                                The Sanmina Quality Assurance (QA) department is at the forefront of ensuring product excellence and operational integrity. Our mission is to integrate robust quality management systems and foster a culture of continuous improvement across all stages of manufacturing and service delivery.
+                            </p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <img src="Training pictureil.jpg" alt="QA Team in a Training Session" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                        </div>
+                    </div>
+
+                    <h4 class="text-xl font-semibold text-red-700 mb-4 text-center">Our Department Structure:</h4>
+                    <!-- Flowchart SVG -->
+                    <div class="w-full flex justify-center p-2 bg-gray-50 rounded-lg">
+                        <svg viewBox="0 0 250 360" class="w-full h-auto max-w-[200px]">
+                            <defs>
+                                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#4e342e" />
+                                </marker>
+                            </defs>
+
+                            <!-- Quality Director -->
+                            <rect x="50" y="20" width="150" height="40" class="flowchart-node" />
+                            <text x="125" y="40" class="flowchart-text">Quality Director</text>
+                            <line x1="125" y1="60" x2="125" y2="80" class="flowchart-line" />
+
+                            <!-- Senior Manager (QA) -->
+                            <rect x="50" y="80" width="150" height="40" class="flowchart-node" />
+                            <text x="125" y="100" class="flowchart-text">Senior Manager (QA)</text>
+                            <line x1="125" y1="120" x2="125" y2="140" class="flowchart-line" />
+
+                            <!-- Staff Engineer -->
+                            <rect x="50" y="140" width="150" height="40" class="flowchart-node" />
+                            <text x="125" y="160" class="flowchart-text">Staff Engineer</text>
+                            <text x="125" y="175" class="flowchart-text">(Calib. & Valid.)</text>
+                            <line x1="125" y1="180" x2="125" y2="200" class="flowchart-line" />
+
+                            <!-- Compliance Training -->
+                            <rect x="50" y="200" width="150" height="40" class="flowchart-node" />
+                            <text x="125" y="220" class="flowchart-text">Compliance Training</text>
+                            <line x1="125" y1="240" x2="125" y2="260" class="flowchart-line" />
+
+                            <!-- Training Supervisor -->
+                            <rect x="50" y="260" width="150" height="40" class="flowchart-node" />
+                            <text x="125" y="280" class="flowchart-text">Training Supervisor</text>
+                            <line x1="125" y1="300" x2="125" y2="320" class="flowchart-line" />
+
+                            <!-- Intern (You!) -->
+                            <rect x="50" y="320" width="150" height="40" class="flowchart-node" />
+                            <text x="125" y="340" class="flowchart-text">Intern (You!)</text>
+                        </svg>
+                            </div>
+                            <!-- End Flowchart SVG -->
+                            <p class="text-lg leading-relaxed mt-8">
+                                We are committed to maintaining strict adherence to industry regulations, internal policies, and customer requirements. Through comprehensive compliance training, we equip our team members with the knowledge and tools necessary to identify, mitigate, and prevent quality deviations, ensuring every product meets the highest global standards.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        <!-- Training Modules Section -->
+        <section id="training" class="page-section hidden" data-page="training">
+            <div class="py-16 px-6 md:px-10 bg-amber-50 rounded-lg shadow-md mx-auto my-10 max-w-6xl">
+                <div class="container mx-auto">
+                    <h3 class="text-3xl font-bold text-center text-red-800 mb-10">Our Compliance Training Modules</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Module 1 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                            <div class="text-center text-red-700 mb-4">
+                                <i class="fas fa-certificate text-4xl"></i> <!-- ISO 9001 Icon -->
+                            </div>
+                            <h4 class="text-xl font-semibold text-red-800 mb-3">ISO 9001:2015 Standards</h4>
+                            <p class="text-gray-700">
+                                In-depth training on the principles and requirements of ISO 9001:2015, focusing on quality management systems and continuous improvement processes. This includes coordination and preparation of materials for compliance and ethics training.
+                            </p>
+                        </div>
+                        <!-- Module 2 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                            <div class="text-center text-red-700 mb-4">
+                                <i class="fas fa-gavel text-4xl"></i> <!-- Regulatory Compliance Icon -->
+                            </div>
+                            <h4 class="text-xl font-semibold text-red-800 mb-3">Regulatory Compliance (e.g., FDA, RoHS, REACH)</h4>
+                            <p class="text-gray-700">
+                                Understanding and adhering to specific industry regulations relevant to our products and markets, ensuring legal and ethical operations. This training ensures compliance with regulatory requirements to achieve high standards of quality.
+                            </p>
+                        </div>
+                        <!-- Module 3 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                            <div class="text-center text-red-700 mb-4">
+                                <i class="fas fa-clipboard-check text-4xl"></i> <!-- Internal Audit Icon -->
+                            </div>
+                            <h4 class="text-xl font-semibold text-red-800 mb-3">Internal Audit Procedures</h4>
+                            <p class="text-gray-700">
+                                Training on conducting effective internal audits to assess compliance, identify non-conformities, and drive corrective actions. Uncertified training records can result in non-conformity and impact manufacturer certification.
+                            </p>
+                        </div>
+                        <!-- Module 4 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                            <div class="text-center text-red-700 mb-4">
+                                <i class="fas fa-shield-alt text-4xl"></i> <!-- Risk Management Icon -->
+                            </div>
+                            <h4 class="text-xl font-semibold text-red-800 mb-3">Risk Management in QA</h4>
+                            <p class="text-gray-700">
+                                Techniques and methodologies for identifying, assessing, and mitigating quality-related risks throughout the product lifecycle. We review and update training matrices regularly.
+                            </p>
+                        </div>
+                        <!-- Module 5 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                            <div class="text-center text-red-700 mb-4">
+                                <i class="fas fa-truck-loading text-4xl"></i> <!-- Supplier Quality Icon -->
+                            </div>
+                            <h4 class="text-xl font-semibold text-red-800 mb-3">Supplier Quality Management</h4>
+                            <p class="text-gray-700">
+                                Ensuring quality and compliance across our supply chain through robust supplier evaluation, monitoring, and development programs. We also participate in various projects such as revamping technical components of company orientation slides.
+                            </p>
+                        </div>
+                        <!-- Module 6 -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                            <div class="text-center text-red-700 mb-4">
+                                <i class="fas fa-file-alt text-4xl"></i> <!-- Data Integrity Icon -->
+                            </div>
+                            <h4 class="text-xl font-semibold text-red-800 mb-3">Data Integrity and Documentation</h4>
+                            <p class="text-gray-700">
+                                Best practices for maintaining accurate, complete, and consistent data records essential for compliance and traceability. This includes ensuring training records meet GDP compliance and timely filing.
+                            </p>
+                        </div>
+                        <!-- MDSAP Module -->
+                        <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                            <div class="text-center text-red-700 mb-4">
+                                <i class="fas fa-stethoscope text-4xl"></i> <!-- Medical Device Icon -->
+                            </div>
+                            <h4 class="text-xl font-semibold text-red-800 mb-3">MDSAP: Medical Device Single Audit Program</h4>
+                            <p class="text-gray-700">
+                                Our compliance training prepares us for yearly MDSAP audits, ensuring employees are trained and compliant with regulatory requirements. This program is crucial for achieving high standards of quality and maintaining manufacturer certification and market access.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Processes & Tools Section -->
+        <section id="processes" class="page-section hidden" data-page="processes">
+            <div class="py-16 px-6 md:px-10 bg-white rounded-lg shadow-md mx-auto my-10 max-w-6xl">
+                <div class="container mx-auto">
+                    <h3 class="text-3xl font-bold text-center text-red-800 mb-10">Training Workflow</h3>
+
+                    <div class="space-y-4">
+                        <!-- Employee Training Certification Accordion -->
+                        <div class="accordion-item">
+                            <button class="accordion-button">
+                                <span>Employee Training Certification</span>
+                                <i class="fas fa-chevron-down icon"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-4 text-gray-700">
+                                    <p class="mb-2">Our main task involves the entry and certification of training records. This ensures that employees are adequately trained and compliant with regulatory requirements.</p>
+                                    <ul class="list-disc list-inside ml-4">
+                                        <li>Ensure employee, training module, and training date are correct when entering data into "SmartSolve".</li>
+                                        <li>Certify courses after a course attendance is emailed by managers for certification.</li>
+                                        <li>Utilize "SmartSolve" and "MESWeb" for daily work, including double-checking entries and viewing training reports.</li>
+                                        <li>Handle certification of existing and new courses (e.g., Test Procedures).</li>
+                                        <li>Add or deactivate training requirements as necessary.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SmartSolve Accordion -->
+                        <div class="accordion-item">
+                            <button class="accordion-button">
+                                <span>SmartSolve System</span>
+                                <i class="fas fa-chevron-down icon"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-4 text-gray-700">
+                                    <p class="mb-2">SmartSolve is a critical system for managing and certifying training records. We ensure that only those who meet the passing criteria of 80% in SmartSolve are certified.</p>
+                                    <p class="mb-2">This system allows us to:</p>
+                                    <ul class="list-disc list-inside ml-4">
+                                        <li>Enter and manage employee training data.</li>
+                                        <li>Certify completed courses.</li>
+                                        <li>Track training requirements and progress.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SanminaNet & NAMETOOL Accordion -->
+                        <div class="accordion-item">
+                            <button class="accordion-button">
+                                <span>SanminaNet & NAMETOOL</span>
+                                <i class="fas fa-chevron-down icon"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-4 text-gray-700">
+                                    <p class="mb-2">We use SanminaNet and its NAMETOOL to efficiently manage employee information for training purposes.</p>
+                                    <ul class="list-disc list-inside ml-4">
+                                        <li>**NAMETOOL:** Used to obtain employee Oracle numbers by entering their name, which is required for certifying any training record.</li>
+                                        <li>**Agile:** Utilized to check for the newest revision details, training requirements, and for document pulling.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Paper Certification & Assessment Accordion -->
+                        <div class="accordion-item">
+                            <button class="accordion-button">
+                                <span>Paper Certification & Assessment</span>
+                                <i class="fas fa-chevron-down icon"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-4 text-gray-700">
+                                    <p class="mb-2">Our team is responsible for assessing course assessment papers upon submission and updating training records for MDSAP.</p>
+                                    <ul class="list-disc list-inside ml-4">
+                                        <li>Only certify those who meet passing criteria of 80% in SmartSolve.</li>
+                                        <li>Ensure employee training module and training dates are correct when entering training record into MES Web.</li>
+                                        <li>Assessment papers must comply with Good Documentation Practices (GDP), avoiding violations like overwriting.</li>
+                                        <li>Ensure up-to-date changes for assessment papers upon new revision release.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Innovation & Growth Section -->
+        <section id="innovation" class="page-section hidden" data-page="innovation">
+            <div class="py-16 px-6 md:px-10 bg-amber-50 rounded-lg shadow-md mx-auto my-10 max-w-6xl">
+                <div class="container mx-auto">
+                    <h3 class="text-3xl font-bold text-center text-red-800 mb-10">Innovation & Efficiency: Our AI Project</h3>
+
+                    <div class="accordion-item">
+                        <button class="accordion-button">
+                            <span>Automating Data Filtering with AI for Biweekly Reports</span>
+                            <i class="fas fa-chevron-down icon"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <div class="p-4 text-gray-700">
+                                <p class="mb-2">We successfully implemented a Work Improvement Project focused on automating data filtering and chart generation using AI, specifically programmed with "App Script" and deployed via "Gemini".</p>
+                                <h4 class="text-xl font-semibold text-red-700 mb-2">Project Details:</h4>
+                                <ul class="list-disc list-inside ml-4 mb-4">
+                                    <li>The code automates data segmentation (filtering data) to generate biweekly reports.</li>
+                                    <li>It automatically generates bar charts based on the filtered data.</li>
+                                </ul>
+                                <h4 class="text-xl font-semibold text-red-700 mb-2">Key Benefits:</h4>
+                                <ul class="list-disc list-inside ml-4 mb-4">
+                                    <li>**Time Savings:** Reduced the time experienced trainers spend on filtering data and producing bar charts from up to 2 hours down to just 5 minutes.</li>
+                                    <li>**Simplified Job Scope:** Streamlined the process, making tasks more efficient.</li>
+                                    <li>**Cost Reduction:** Contributed to cutting operational costs.</li>
+                                </ul>
+                                <p class="mb-2">This project was presented in a staff communication session (highlighting new projects & KPIs) and was eligible for a Lean Six Sigma (LSS) conventional project.</p>
+                                <p class="mb-4">The code's accuracy was verified through manual filtering, ensuring reliability.</p>
+
+                                <h4 class="text-xl font-semibold text-red-700 mb-2">Challenges & Solutions:</h4>
+                                <ul class="list-disc list-inside ml-4">
+                                    <li>**Challenge: Decoding code and generating automation of charts.**
+                                        <br>Solution: Extensive research, understanding of code, and leveraging AI assistance. For chart automation, we utilized other applications.
+                                    </li>
+                                    <li>**Challenge: Certifying training records requires constant detail and can be draining.**
+                                        <br>Solution: Implementing regular breaks and utilizing post-it notes for meticulous double-checking.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Activities Section -->
+        <section id="activities" class="page-section hidden" data-page="activities">
+            <div class="py-16 px-6 md:px-10 bg-white rounded-lg shadow-md mx-auto my-10 max-w-6xl">
+                <div class="container mx-auto">
+                    <h3 class="text-3xl font-bold text-center text-red-800 mb-10">Our Team in Action</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Activity 1: Internal Audit Session -->
+                        <div class="bg-gray-100 p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-center space-x-6">
+                            <img src="EGH325_Nicole Lim_221066J_MidPresentation.pdf?page=6&inline=true" alt="Internal Audit Session" class="rounded-full w-24 h-24 md:w-32 md:h-32 object-cover mb-4 md:mb-0">
+                            <div>
+                                <h4 class="text-xl font-semibold text-red-700 mb-2">Internal Audit Session</h4>
+                                <p class="text-gray-700">
+                                    Regular internal audits are conducted to ensure adherence to quality standards and identify areas for improvement. Our team actively participates in these crucial reviews.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Activity 2: Continuous Improvement Workshop -->
+                        <div class="bg-gray-100 p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-center space-x-6">
+                            <img src="https://placehold.co/150x150/CCE0FF/003366?text=Training" alt="Continuous Improvement Workshop" class="rounded-full w-24 h-24 md:w-32 md:h-32 object-cover mb-4 md:mb-0">
+                            <div>
+                                <h4 class="text-xl font-semibold text-red-700 mb-2">Continuous Improvement Workshop</h4>
+                                <p class="text-gray-700">
+                                    Our team regularly engages in workshops focused on lean methodologies and Six Sigma principles to drive operational efficiency and quality.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Activity 3: New Certification Achievement -->
+                        <div class="bg-gray-100 p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-center space-x-6">
+                            <img src="https://placehold.co/150x150/CCE0FF/003366?text=Certification" alt="New Certification Achievement" class="rounded-full w-24 h-24 md:w-32 md:h-32 object-cover mb-4 md:mb-0">
+                            <div>
+                                <h4 class="text-xl font-semibold text-red-700 mb-2">New Certification Achievement</h4>
+                                <p class="text-gray-700">
+                                    Proud to announce that several team members recently achieved their Certified Quality Auditor (CQA) certifications!
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Activity 4: Orientation Trainings -->
+                        <div class="bg-gray-100 p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-center space-x-6">
+                            <img src="EGH325_Nicole Lim_221066J_MidPresentation.pdf?page=12&inline=true" alt="Orientation Training" class="rounded-full w-24 h-24 md:w-32 md:h-32 object-cover mb-4 md:mb-0">
+                            <div>
+                                <h4 class="text-xl font-semibold text-red-700 mb-2">New Employee Orientation Trainings</h4>
+                                <p class="text-gray-700">
+                                    We conduct regular training sessions for new employees and operators on Quality Goals, Objectives, and Regulatory Standards, held at least once every two weeks. Training is often bilingual, and our team assists with translation and covering topics like GDP and QSR.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="page-section hidden" data-page="contact">
+            <div class="py-16 px-6 md:px-10 bg-gradient-to-r from-red-800 to-black text-white rounded-t-lg shadow-lg mx-auto my-10 max-w-6xl">
+                <div class="container mx-auto max-w-3xl text-center">
+                    <h3 class="text-3xl font-bold mb-6">Get in Touch with Our QA Team</h3>
+                    <p class="text-lg mb-8 opacity-90">
+                        Have questions about our compliance training or quality assurance processes? Feel free to reach out to us.
+                    </p>
+                    <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl">
+                        <p class="text-xl font-semibold mb-4">Email: <a href="mailto:nursabrina.mohdredwankhoo@sanmina.com" class="text-red-700 hover:underline">nursabrina.mohdredwankhoo@sanmina.com</a></p>
+                        <p class="text-md mt-6 text-gray-600">Sanmina Corporation, [Your Department Address Here]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div> <!-- End of #page-content -->
+
+    <!-- Footer Section -->
+    <footer class="bg-black text-white py-6 px-6 md:px-10 text-center rounded-b-lg">
+        <div class="container mx-auto">
+            <p>&copy; 2024 Sanmina Quality Assurance Department. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Navigation Buttons -->
+    <button onclick="topFunction()" id="backToTopBtn" class="floating-btn" title="Go to top">
+        <i class="fas fa-arrow-up"></i> Top
+    </button>
+    <button onclick="endFunction()" id="endOfPageBtn" class="floating-btn" title="Go to end">
+        <i class="fas fa-arrow-down"></i> End
+    </button>
+    <button onclick="prevPage()" id="prevPageBtn" class="floating-btn" title="Previous Page">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <button onclick="nextPage()" id="nextPageBtn" class="floating-btn" title="Next Page">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <script>
+        // Get the buttons
+        let backToTopBtn = document.getElementById("backToTopBtn");
+        let endOfPageBtn = document.getElementById("endOfPageBtn");
+        let prevPageBtn = document.getElementById("prevPageBtn");
+        let nextPageBtn = document.getElementById("nextPageBtn");
+
+        // Page order for navigation
+        const pageOrder = ['home-about', 'training', 'processes', 'innovation', 'activities', 'contact'];
+        let currentPageIndex = 0; // Initialize current page index
+
+        // When the user scrolls down 20px from the top of the document, show the top/end buttons
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopBtn.style.display = "block";
+                endOfPageBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+                endOfPageBtn.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the "Top" button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+
+        // When the user clicks on the "End" button, scroll to the end of the current page
+        function endFunction() {
+            const activePage = document.querySelector('.page-section.active');
+            if (activePage) {
+                activePage.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            }
+        }
+
+        // Accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            });
+
+            // Show the initial page and update navigation buttons
+            showPage(pageOrder[currentPageIndex]);
+
+            // Event listener for "Enter" key on search input
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter' || event.keyCode === 13) {
+                    event.preventDefault(); // Prevent default form submission behavior
+                    performSearch();
+                }
+            });
+        });
+
+        // --- Page Navigation Logic ---
+        /**
+         * Hides all page sections and displays the requested one.
+         * @param {string} pageId The ID of the section to display (e.g., 'home-about', 'training').
+         */
+        function showPage(pageId) {
+            const pageSections = document.querySelectorAll('.page-section');
+            pageSections.forEach(section => {
+                section.classList.add('hidden'); // Hide all sections
+                section.classList.remove('active'); // Remove active class
+            });
+
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.remove('hidden'); // Show the target section
+                targetPage.classList.add('active'); // Add active class
+                window.scrollTo(0, 0); // Scroll to top of the new page
+                clearHighlights(); // Clear any previous search highlights
+                document.getElementById('searchInput').value = ''; // Clear search input
+            }
+            updatePageNavigationButtons(); // Update prev/next button visibility
+        }
+
+        /**
+         * Navigates to the next page in the defined order.
+         */
+        function nextPage() {
+            if (currentPageIndex < pageOrder.length - 1) {
+                currentPageIndex++;
+                showPage(pageOrder[currentPageIndex]);
+            }
+        }
+
+        /**
+         * Navigates to the previous page in the defined order.
+         */
+        function prevPage() {
+            if (currentPageIndex > 0) {
+                currentPageIndex--;
+                showPage(pageOrder[currentPageIndex]);
+            }
+        }
+
+        /**
+         * Updates the visibility of the next and previous page buttons.
+         */
+        function updatePageNavigationButtons() {
+            if (currentPageIndex === 0) {
+                prevPageBtn.style.display = 'none';
+            } else {
+                prevPageBtn.style.display = 'block';
+            }
+
+            if (currentPageIndex === pageOrder.length - 1) {
+                nextPageBtn.style.display = 'none';
+            } else {
+                nextPageBtn.style.display = 'block';
+            }
+        }
+
+        // --- Search Functionality Logic ---
+        let originalContent = {}; // Store original content to revert highlights
+
+        /**
+         * Performs a search on the currently active page and highlights matches.
+         */
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.trim();
+            clearHighlights(); // Clear previous highlights before searching
+
+            if (!searchTerm) {
+                return; // Do nothing if search term is empty
+            }
+
+            let foundMatch = false;
+
+            // Iterate through all pages to search
+            for (let i = 0; i < pageOrder.length; i++) {
+                const pageId = pageOrder[i];
+                const pageElement = document.getElementById(pageId);
+
+                // Ensure originalContent is stored for this page
+                if (!originalContent[pageId]) {
+                    originalContent[pageId] = pageElement.innerHTML;
+                }
+
+                const regex = new RegExp(`(${searchTerm})`, 'gi');
+                let contentHtml = originalContent[pageId];
+
+                // Check if the search term exists on this page
+                if (regex.test(contentHtml)) {
+                    // If a match is found, navigate to this page
+                    showPage(pageId);
+                    currentPageIndex = i; // Update current page index
+                    foundMatch = true;
+
+                    // Apply highlight to the active page
+                    const highlightedHtml = contentHtml.replace(regex, `<span class="highlight">$1</span>`);
+                    pageElement.innerHTML = highlightedHtml;
+
+                    // Scroll to the first highlighted instance on the newly active page
+                    const firstHighlight = pageElement.querySelector('.highlight');
+                    if (firstHighlight) {
+                        firstHighlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                    break; // Stop after finding and displaying the first match
+                }
+            }
+
+            if (!foundMatch) {
+                // Use a custom modal or message box instead of alert()
+                const messageBox = document.createElement('div');
+                messageBox.className = 'fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-[100]';
+                messageBox.innerHTML = `
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <p class="text-lg font-semibold mb-4">No results found for "${searchTerm}" on any page.</p>
+                        <button onclick="this.parentNode.parentNode.remove()" class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
+                            OK
+                        </button>
+                    </div>
+                `;
+                document.body.appendChild(messageBox);
+            }
+        }
+
+        /**
+         * Clears all search highlights on all pages.
+         */
+        function clearHighlights() {
+            for (const pageId of pageOrder) {
+                const pageElement = document.getElementById(pageId);
+                if (pageElement && originalContent[pageId]) {
+                    pageElement.innerHTML = originalContent[pageId]; // Revert to original content
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
