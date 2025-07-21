@@ -152,6 +152,28 @@
             padding: 2px 4px;
             border-radius: 3px;
         }
+
+        /* Custom modal for password prompt */
+        .password-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .password-modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
     </style>
 </head>
 <body class="text-gray-800">
@@ -361,7 +383,7 @@
                                     <ul class="list-disc list-inside ml-4">
                                         <li>Ensure employee, training module, and training date are correct when entering data into "<a href="https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx" target="_blank" class="text-red-700 hover:underline">SmartSolve</a>" (<span class="text-sm text-gray-500 break-all">https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx</span>).</li>
                                         <li>Certify courses after a course attendance is emailed by managers for certification.</li>
-                                        <li>Utilize "<a href="https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx" target="_blank" class="text-red-700 hover:underline">SmartSolve</a>" and "<a href="https://hsv1amappw17.sanmina.com/siteminderagent/forms/login.fcc?TYPE=33554433&REALMOID=06-de5eabc8-da70-44d8-b688-9a3f1d60a97f&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=-SM-lwoo2YEXY4Ofz%2fXzgZ1Ki0dqd67eWUU1ATC98rmdPv0%2fl8coW1gHFwr9v7ESbUSC&TARGET=-SM-HTTP%3a%2f%2fhsv1amappw17%2esanmina%2ecom%2fmesweb%2fauthenticationredirect%2fredirect%2eashx%3fReturnUrl%3dhttp-%3a-%2f-%2fmesweb%2ecorptraining%2esanmina%2ecom-%2fDefault%2easpx" target="_blank" class="text-red-700 hover:underline">MESWeb</a>" (<span class="text-sm text-gray-500 break-all">Link to MESWeb</span>) for daily work for entry of training record.</li>
+                                        <li>Utilize "<a href="https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx" target="_blank" class="text-red-700 hover:underline">SmartSolve</a>" and "<a href="https://hsv1amappw17.sanmina.com/siteminderagent/forms/login.fcc?TYPE=33554433&REALMOID=06-de5eabc8-da70-44d8-b688-9a3f1d60a97f&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=-SM-lwoo2YEXY4Ofz%2fXzgZ1Ki0dqd67eWUU1ATC98rmdPv0%2fl8coW1gHFwr9v7ESbUSC&TARGET=-SM-HTTP%3a%2f%2fhsv1amappw17%2esanmina%2ecom%2fmesweb%2fauthenticationredirect%2fredirect%2eashx%3fReturnUrl%3dhttp-%3a-%2f-%2fmesweb%2ecorptraining%2esanmina%2ecom-%2fDefault%2easpx" target="_blank" class="text-red-700 hover:underline">MESWeb</a>" (<span class="text-sm text-gray-500 break-all">https://hsv1amappw17.sanmina.com/siteminderagent/forms/login.fcc?TYPE=33554433&REALMOID=06-de5eabc8-da70-44d8-b688-9a3f1d60a97f&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=-SM-lwoo2YEXY4Ofz%2fXzgZ1Ki0dqd67eWUU1ATC98rmdPv0%2fl8coW1gHFwr9v7ESbUSC&TARGET=-SM-HTTP%3a%2f%2fhsv1amappw17%2esanmina%2ecom%2fmesweb%2fauthenticationredirect%2fredirect%2eashx%3fReturnUrl%3dhttp-%3a-%2f-%2fmesweb%2ecorptraining%2esanmina%2ecom-%2fDefault%2easpx</span>) for daily work for entry of training record.</li>
                                         <li>Certification of Existing Courses.</li>
                                         <li>Certification of New Courses (Test Procedures etc.).</li>
                                         <li>Add or deactivate training requirements as necessary.</li>
@@ -421,6 +443,25 @@
                                         <li>Assessment papers must comply with Good Documentation Practices (GDP), avoiding violations like overwriting.</li>
                                         <li>Ensure up-to-date changes for assessment papers upon new revision release.</li>
                                     </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Accordion for Procedure Document -->
+                        <div class="accordion-item">
+                            <button id="procedureDocButton" class="accordion-button">
+                                <span>Procedure on Certifying Training Record</span>
+                                <i class="fas fa-lock icon ml-2"></i> <!-- Lock icon -->
+                                <i class="fas fa-chevron-down icon ml-auto"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-4 text-gray-700">
+                                    <p class="mb-2">Access the detailed procedure document for certifying training records. This document is password-protected for security.</p>
+                                    <div id="pdfActionContainer" class="hidden mt-4">
+                                        <p class="text-gray-700 mb-2">Password: `certify123` (for demonstration purposes only)</p>
+                                        <a href="Steps in Certifying Training Record.pdf" target="_blank" class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
+                                            Open Document <i class="fas fa-file-pdf ml-2"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -496,276 +537,22 @@
                                 <h4 class="text-xl font-semibold text-red-700 mb-2">Continuous Improvement Workshop</h4>
                                 <p class="text-gray-700">
                                     Our team regularly engages in workshops focused on lean methodologies and Six Sigma principles to drive operational efficiency and quality.
+                                </sitemap>
+                                <p>
+                                    The `sitemap.xml` file is automatically generated and updated by the platform. You don't need to create or manage it manually. It helps search engines discover and crawl your content.
                                 </p>
-                            </div>
-                        </div>
-                        <!-- Activity 3: New Certification Achievement -->
-                        <div class="bg-gray-100 p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-center space-x-6">
-                            <img src="https://placehold.co/150x150/CCE0FF/003366?text=Certification" alt="New Certification Achievement" class="rounded-full w-24 h-24 md:w-32 md:h-32 object-cover mb-4 md:mb-0">
-                            <div>
-                                <h4 class="text-xl font-semibold text-red-700 mb-2">New Certification Achievement</h4>
-                                <p class="text-gray-700">
-                                    Proud to announce that several team members recently achieved their Certified Quality Auditor (CQA) certifications!
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Activity 4: Orientation Trainings -->
-                        <div class="bg-gray-100 p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-center space-x-6">
-                            <img src="EGH325_Nicole Lim_221066J_MidPresentation.pdf?page=12&inline=true" alt="Orientation Training" class="rounded-full w-24 h-24 md:w-32 md:h-32 object-cover mb-4 md:mb-0">
-                            <div>
-                                <h4 class="text-xl font-semibold text-red-700 mb-2">New Employee Orientation Trainings</h4>
-                                <p class="text-gray-700">
-                                    We conduct regular training sessions for new employees and operators on Quality Goals, Objectives, and Regulatory Standards, held at least once every two weeks. Training is often bilingual, and our team assists with translation and covering topics like GDP and QSR.
-                                </p>
-                            </div>
+                            </section>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </main>
 
-        <!-- Contact Section -->
-        <section id="contact" class="page-section hidden" data-page="contact">
-            <div class="py-16 px-6 md:px-10 bg-gradient-to-r from-red-800 to-black text-white rounded-t-lg shadow-lg mx-auto my-10 max-w-6xl">
-                <div class="container mx-auto max-w-3xl text-center">
-                    <h3 class="text-3xl font-bold mb-6">Get in Touch with Our QA Team</h3>
-                    <p class="text-lg mb-8 opacity-90">
-                        Have questions about our compliance training or quality assurance processes? Feel free to reach out to us.
-                    </p>
-                    <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl">
-                        <p class="text-xl font-semibold mb-4">Email: <a href="mailto:nursabrina.mohdredwankhoo@sanmina.com" class="text-red-700 hover:underline">nursabrina.mohdredwankhoo@sanmina.com</a></p>
-                        <p class="text-md mt-6 text-gray-600">Sanmina Corporation, [Your Department Address Here]</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div> <!-- End of #page-content -->
-
-    <!-- Footer Section -->
-    <footer class="bg-black text-white py-6 px-6 md:px-10 text-center rounded-b-lg">
-        <div class="container mx-auto">
-            <p>&copy; 2024 Sanmina Quality Assurance Department. All rights reserved.</p>
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 My Blog. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- Floating Navigation Buttons -->
-    <button onclick="topFunction()" id="backToTopBtn" class="floating-btn" title="Go to top">
-        <i class="fas fa-arrow-up"></i> Top
-    </button>
-    <button onclick="endFunction()" id="endOfPageBtn" class="floating-btn" title="Go to end">
-        <i class="fas fa-arrow-down"></i> End
-    </button>
-    <button onclick="prevPage()" id="prevPageBtn" class="floating-btn" title="Previous Page">
-        <i class="fas fa-chevron-left"></i>
-    </button>
-    <button onclick="nextPage()" id="nextPageBtn" class="floating-btn" title="Next Page">
-        <i class="fas fa-chevron-right"></i>
-    </button>
-
-    <script>
-        // Get the buttons
-        let backToTopBtn = document.getElementById("backToTopBtn");
-        let endOfPageBtn = document.getElementById("endOfPageBtn");
-        let prevPageBtn = document.getElementById("prevPageBtn");
-        let nextPageBtn = document.getElementById("nextPageBtn");
-
-        // Page order for navigation
-        const pageOrder = ['home-about', 'training', 'processes', 'innovation', 'activities', 'contact'];
-        let currentPageIndex = 0; // Initialize current page index
-
-        // When the user scrolls down 20px from the top of the document, show the top/end buttons
-        window.onscroll = function() {scrollFunction()};
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                backToTopBtn.style.display = "block";
-                endOfPageBtn.style.display = "block";
-            } else {
-                backToTopBtn.style.display = "none";
-                endOfPageBtn.style.display = "none";
-            }
-        }
-
-        // When the user clicks on the "Top" button, scroll to the top of the document
-        function topFunction() {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-        }
-
-        // When the user clicks on the "End" button, scroll to the end of the current page
-        function endFunction() {
-            const activePage = document.querySelector('.page-section.active');
-            if (activePage) {
-                activePage.scrollIntoView({ behavior: 'smooth', block: 'end' });
-            }
-        }
-
-        // Accordion functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const accordionButtons = document.querySelectorAll('.accordion-button');
-
-            accordionButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    this.classList.toggle('active');
-                    const content = this.nextElementSibling;
-                    if (content.style.maxHeight) {
-                        content.style.maxHeight = null;
-                    } else {
-                        content.style.maxHeight = content.scrollHeight + "px";
-                    }
-                });
-            });
-
-            // Show the initial page and update navigation buttons
-            showPage(pageOrder[currentPageIndex]);
-
-            // Event listener for "Enter" key on search input
-            const searchInput = document.getElementById('searchInput');
-            searchInput.addEventListener('keydown', function(event) {
-                if (event.key === 'Enter' || event.keyCode === 13) {
-                    event.preventDefault(); // Prevent default form submission behavior
-                    performSearch();
-                }
-            });
-        });
-
-        // --- Page Navigation Logic ---
-        /**
-         * Hides all page sections and displays the requested one.
-         * @param {string} pageId The ID of the section to display (e.g., 'home-about', 'training').
-         */
-        function showPage(pageId) {
-            const pageSections = document.querySelectorAll('.page-section');
-            pageSections.forEach(section => {
-                section.classList.add('hidden'); // Hide all sections
-                section.classList.remove('active'); // Remove active class
-            });
-
-            const targetPage = document.getElementById(pageId);
-            if (targetPage) {
-                targetPage.classList.remove('hidden'); // Show the target section
-                targetPage.classList.add('active'); // Add active class
-                window.scrollTo(0, 0); // Scroll to top of the new page
-                clearHighlights(); // Clear any previous search highlights
-                document.getElementById('searchInput').value = ''; // Clear search input
-            }
-            updatePageNavigationButtons(); // Update prev/next button visibility
-        }
-
-        /**
-         * Navigates to the next page in the defined order.
-         */
-        function nextPage() {
-            if (currentPageIndex < pageOrder.length - 1) {
-                currentPageIndex++;
-                showPage(pageOrder[currentPageIndex]);
-            }
-        }
-
-        /**
-         * Navigates to the previous page in the defined order.
-         */
-        function prevPage() {
-            if (currentPageIndex > 0) {
-                currentPageIndex--;
-                showPage(pageOrder[currentPageIndex]);
-            }
-        }
-
-        /**
-         * Updates the visibility of the next and previous page buttons.
-         */
-        function updatePageNavigationButtons() {
-            if (currentPageIndex === 0) {
-                prevPageBtn.style.display = 'none';
-            } else {
-                prevPageBtn.style.display = 'block';
-            }
-
-            if (currentPageIndex === pageOrder.length - 1) {
-                nextPageBtn.style.display = 'none';
-            } else {
-                nextPageBtn.style.display = 'block';
-            }
-        }
-
-        // --- Search Functionality Logic ---
-        let originalContent = {}; // Store original content to revert highlights
-
-        /**
-         * Performs a search on the currently active page and highlights matches.
-         */
-        function performSearch() {
-            const searchTerm = document.getElementById('searchInput').value.trim();
-            clearHighlights(); // Clear previous highlights before searching
-
-            if (!searchTerm) {
-                return; // Do nothing if search term is empty
-            }
-
-            let foundMatch = false;
-
-            // Iterate through all pages to search
-            for (let i = 0; i < pageOrder.length; i++) {
-                const pageId = pageOrder[i];
-                const pageElement = document.getElementById(pageId);
-
-                // Ensure originalContent is stored for this page
-                if (!originalContent[pageId]) {
-                    originalContent[pageId] = pageElement.innerHTML;
-                }
-
-                const regex = new RegExp(`(${searchTerm})`, 'gi');
-                let contentHtml = originalContent[pageId];
-
-                // Check if the search term exists on this page
-                if (regex.test(contentHtml)) {
-                    // If a match is found, navigate to this page
-                    showPage(pageId);
-                    currentPageIndex = i; // Update current page index
-                    foundMatch = true;
-
-                    // Apply highlight to the active page
-                    const highlightedHtml = contentHtml.replace(regex, `<span class="highlight">$1</span>`);
-                    pageElement.innerHTML = highlightedHtml;
-
-                    // Scroll to the first highlighted instance on the newly active page
-                    const firstHighlight = pageElement.querySelector('.highlight');
-                    if (firstHighlight) {
-                        firstHighlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                    break; // Stop after finding and displaying the first match
-                }
-            }
-
-            if (!foundMatch) {
-                // Use a custom modal or message box instead of alert()
-                const messageBox = document.createElement('div');
-                messageBox.className = 'fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-[100]';
-                messageBox.innerHTML = `
-                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                        <p class="text-lg font-semibold mb-4">No results found for "${searchTerm}" on any page.</p>
-                        <button onclick="this.parentNode.parentNode.remove()" class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
-                            OK
-                        </button>
-                    </div>
-                `;
-                document.body.appendChild(messageBox);
-            }
-        }
-
-        /**
-         * Clears all search highlights on all pages.
-         */
-        function clearHighlights() {
-            for (const pageId of pageOrder) {
-                const pageElement = document.getElementById(pageId);
-                if (pageElement && originalContent[pageId]) {
-                    pageElement.innerHTML = originalContent[pageId]; // Revert to original content
-                }
-            }
-        }
-    </script>
-
 </body>
 </html>
