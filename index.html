@@ -450,9 +450,9 @@
                                     </ul>
                                     <h4 class="text-xl font-semibold text-red-700 mb-2">Key Benefits:</h4>
                                     <ul class="list-disc list-inside ml-4 mb-4">
-                                        [cite_start]<li>**Time Savings:** Reduced the time experienced trainers spend on filtering data and producing bar charts from up to 2 hours down to just 5 minutes. [cite: 13]</li>
+                                        <li>**Time Savings:** Reduced the time experienced trainers spend on filtering data and producing bar charts from up to 2 hours down to just 5 minutes.</li>
                                         <li>**Simplified Job Scope:** Streamlined the process, making tasks more efficient.</li>
-                                        [cite_start]<li>**Cost Reduction:** Contributed to cutting operational costs. [cite: 31, 33]</li>
+                                        <li>**Cost Reduction:** Contributed to cutting operational costs.</li>
                                     </ul>
                                     <p class="mb-2">This project was presented in a staff communication session (highlighting new projects & KPIs) and was eligible for a Lean Six Sigma (LSS) conventional project.</p>
                                     <p class="mb-4">The code's accuracy was verified through manual filtering, ensuring reliability.</p>
@@ -483,7 +483,8 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
         <section id="activities" class="page-section hidden" data-page="activities">
             <div class="py-16 px-6 md:px-10 bg-white rounded-lg shadow-md mx-auto my-10 max-w-6xl">
@@ -855,13 +856,11 @@
             pdfActionContainerInModal.style.display = 'none';
 
             // Hide any specific, in-page PDF action containers
+            // This is crucial to ensure only the relevant one is shown after validation
             if (document.getElementById('pdfActionContainer')) {
                 document.getElementById('pdfActionContainer').style.display = 'none';
             }
-            if (document.getElementById('innovationPdfActionContainer')) {
-                document.getElementById('innovationPdfActionContainer').style.display = 'none';
-            }
-
+            // Removed specific innovationPdfActionContainer HTML, so no need to hide it here.
 
             // Set the download link href and displayed password hint for the universal modal
             downloadLink.href = docPath;
@@ -888,17 +887,21 @@
 
                     // Determine which PDF action container to show
                     if (specificPdfActionContainerId) {
-                        // Show the specific in-page container if provided
+                        // If a specific in-page container ID is provided, show that one
                         const specificContainer = document.getElementById(specificPdfActionContainerId);
                         if (specificContainer) {
                             specificContainer.style.display = 'block';
-                            // Hide the universal modal's container if a specific one is shown
+                            // When an in-page container is shown, the modal itself should just close
+                            // Or, you might want to adjust the modal's internal visibility
+                            // For this case, we'll hide the modal's download section, as it's not used.
                             pdfActionContainerInModal.style.display = 'none';
-                            // Also hide modal controls if showing in-page
-                            closeModalAfterDownloadBtn.style.display = 'none';
+                            // And the modal should probably close itself after the user clicks "Submit"
+                            // if the download link is shown elsewhere.
+                            passwordModal.style.display = 'none';
+                            showPage(returnPageId); // Redirect back to the page to see the in-page link
                         }
                     } else {
-                        // Otherwise, show the universal modal's container
+                        // Otherwise, show the universal modal's container (for the Innovation PDF)
                         pdfActionContainerInModal.style.display = 'block';
                         closeModalAfterDownloadBtn.style.display = 'block';
                     }
@@ -909,13 +912,11 @@
 
             cancelPasswordBtn.onclick = function() {
                 passwordModal.style.display = 'none';
-                // Ensure specific containers are hidden if modal is cancelled
+                // Ensure any specific containers are hidden if modal is cancelled
                 if (document.getElementById('pdfActionContainer')) {
                     document.getElementById('pdfActionContainer').style.display = 'none';
                 }
-                if (document.getElementById('innovationPdfActionContainer')) {
-                    document.getElementById('innovationPdfActionContainer').style.display = 'none';
-                }
+                // No need to hide innovationPdfActionContainer as it's removed from HTML
             };
 
             closeModalAfterDownloadBtn.onclick = function() {
@@ -923,7 +924,7 @@
                 showPage(returnPageId);
             };
 
-            // Re-add keydown listener
+            // Re-add keydown listener for Enter key
             docPassword.addEventListener('keydown', handleDocPasswordKeydown);
 
             function handleDocPasswordKeydown(event) {
