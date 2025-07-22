@@ -457,10 +457,10 @@
                             <div class="accordion-content">
                                 <div class="p-4 text-gray-700">
                                     <p class="mb-2">Access the detailed procedure document for certifying training records. This document is password-protected for security.</p>
-                                    <div id="pdfActionContainer" class="hidden mt-4">
+                                    <div id="pdfActionContainer" style="display: none;" class="mt-4">
                                         <p class="text-gray-700 mb-2">Password: `certify123` (for demonstration purposes only)</p>
-                                        <a href="Steps in Certifying Training Record.pdf" target="_blank" class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
-                                            Open Document <i class="fas fa-file-pdf ml-2"></i>
+                                        <a href="Steps in Certifying Training Record.pdf" download class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
+                                            Download Document <i class="fas fa-download ml-2"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -827,10 +827,10 @@
                     <button id="submitPassword" class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300 mr-2">Submit</button>
                     <button onclick="this.parentNode.parentNode.remove()" class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition duration-300">Cancel</button>
                     <p id="passwordError" class="text-red-500 text-sm mt-2 hidden">Incorrect password. Please try again.</p>
-                    <div id="pdfActionContainer" class="hidden mt-4">
+                    <div id="pdfActionContainer" style="display: none;" class="mt-4">
                         <p class="text-gray-700 mb-2">Password: ` + '`' + correctPassword + '`' + ` (for demonstration purposes only)</p>
-                        <a href="${docPath}" target="_blank" class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
-                            Open Document <i class="fas fa-file-pdf ml-2"></i>
+                        <a href="${docPath}" target="_blank" download class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
+                            Download Document <i class="fas fa-download ml-2"></i>
                         </a>
                     </div>
                 </div>
@@ -842,11 +842,11 @@
                 const enteredPassword = document.getElementById('docPassword').value.trim();
                 if (enteredPassword === correctPassword) {
                     document.getElementById('passwordError').classList.add('hidden');
-                    document.getElementById('modalTitle').innerText = 'Document Ready to Open'; // Change title
+                    document.getElementById('modalTitle').innerText = 'Document Ready for Download'; // Change title
                     document.getElementById('docPassword').style.display = 'none';
                     document.getElementById('submitPassword').style.display = 'none';
                     modal.querySelector('.bg-gray-500').style.display = 'none'; // Hide cancel button
-                    document.getElementById('pdfActionContainer').classList.remove('hidden'); // Show the link container
+                    document.getElementById('pdfActionContainer').style.display = 'block'; // Show the link container
                 } else {
                     document.getElementById('passwordError').classList.remove('hidden');
                 }
