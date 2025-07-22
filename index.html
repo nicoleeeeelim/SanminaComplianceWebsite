@@ -435,40 +435,60 @@
                 <div class="container mx-auto">
                     <h3 class="text-3xl font-bold text-center text-red-800 mb-10">Innovation & Efficiency: Our AI Project</h3>
 
-                    <div class="accordion-item">
-                        <button class="accordion-button">
-                            <span>Automating Data Filtering with AI for Biweekly Reports</span>
-                            <i class="fas fa-chevron-down icon"></i>
-                        </button>
-                        <div class="accordion-content">
-                            <div class="p-4 text-gray-700">
-                                <p class="mb-2">We successfully implemented a Work Improvement Project focused on automating data filtering and chart generation using AI, specifically programmed with "App Script" and deployed via "Gemini".</p>
-                                <h4 class="text-xl font-semibold text-red-700 mb-2">Project Details:</h4>
-                                <ul class="list-disc list-inside ml-4 mb-4">
-                                    <li>The code automates data segmentation (filtering data) to generate biweekly reports.</li>
-                                    <li>It automatically generates bar charts based on the filtered data.</li>
-                                </ul>
-                                <h4 class="text-xl font-semibold text-red-700 mb-2">Key Benefits:</h4>
-                                <ul class="list-disc list-inside ml-4 mb-4">
-                                    <li>**Time Savings:** Reduced the time experienced trainers spend on filtering data and producing bar charts from up to 2 hours down to just 5 minutes.</li>
-                                    <li>**Simplified Job Scope:** Streamlined the process, making tasks more efficient.</li>
-                                    <li>**Cost Reduction:** Contributed to cutting operational costs.</li>
-                                </ul>
-                                <p class="mb-2">This project was presented in a staff communication session (highlighting new projects & KPIs) and was eligible for a Lean Six Sigma (LSS) conventional project.</p>
-                                <p class="mb-4">The code's accuracy was verified through manual filtering, ensuring reliability.</p>
+                    <div class="space-y-4">
+                        <div class="accordion-item">
+                            <button class="accordion-button">
+                                <span>Automating Data Filtering with AI for Biweekly Reports</span>
+                                <i class="fas fa-chevron-down icon"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-4 text-gray-700">
+                                    <p class="mb-2">We successfully implemented a Work Improvement Project focused on automating data filtering and chart generation using AI, specifically programmed with "App Script" and deployed via "Gemini".</p>
+                                    <h4 class="text-xl font-semibold text-red-700 mb-2">Project Details:</h4>
+                                    <ul class="list-disc list-inside ml-4 mb-4">
+                                        <li>The code automates data segmentation (filtering data) to generate biweekly reports.</li>
+                                        <li>It automatically generates bar charts based on the filtered data.</li>
+                                    </ul>
+                                    <h4 class="text-xl font-semibold text-red-700 mb-2">Key Benefits:</h4>
+                                    <ul class="list-disc list-inside ml-4 mb-4">
+                                        <li>**Time Savings:** Reduced the time experienced trainers spend on filtering data and producing bar charts from up to 2 hours down to just 5 minutes.</li>
+                                        <li>**Simplified Job Scope:** Streamlined the process, making tasks more efficient.</li>
+                                        <li>**Cost Reduction:** Contributed to cutting operational costs.</li>
+                                    </ul>
+                                    <p class="mb-2">This project was presented in a staff communication session (highlighting new projects & KPIs) and was eligible for a Lean Six Sigma (LSS) conventional project.</p>
+                                    <p class="mb-4">The code's accuracy was verified through manual filtering, ensuring reliability.</p>
 
-                                <h4 class="text-xl font-semibold text-red-700 mb-2">Challenges & Solutions:</h4>
-                                <ul class="list-disc list-inside ml-4">
-                                    <li>**Challenge: Decoding code and generating automation of charts.**
-                                        <br>Solution: Extensive research, understanding of code, and leveraging AI assistance. For chart automation, we utilized other applications.
-                                    </li>
-                                    <li>**Challenge: Certifying training records requires constant detail and can be draining.**
-                                        <br>Solution: Implementing regular breaks and utilizing post-it notes for meticulous double-checking.
-                                    </li>
-                                </ul>
+                                    <h4 class="text-xl font-semibold text-red-700 mb-2">Challenges & Solutions:</h4>
+                                    <ul class="list-disc list-inside ml-4">
+                                        <li>**Challenge: Decoding code and generating automation of charts.**
+                                            <br>Solution: Extensive research, understanding of code, and leveraging AI assistance. For chart automation, we utilized other applications.
+                                        </li>
+                                        <li>**Challenge: Certifying training records requires constant detail and can be draining.**
+                                            <br>Solution: Implementing regular breaks and utilizing post-it notes for meticulous double-checking.
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
+
+                        <div class="accordion-item">
+                            <button id="innovationDocButton" class="accordion-button">
+                                <span>Automating MR Report Procedures Document</span>
+                                <i class="fas fa-lock icon ml-2"></i> <i class="fas fa-chevron-down icon ml-auto"></i>
+                            </button>
+                            <div class="accordion-content">
+                                <div class="p-4 text-gray-700">
+                                    <p class="mb-2">Access the detailed document outlining the procedures for automating MR reports using AI. This document is password-protected for security.</p>
+                                    <div id="innovationPdfActionContainer" style="display: none;" class="mt-4">
+                                        <p class="text-gray-700 mb-2">Password: `mrreport2025` (for demonstration purposes only)</p>
+                                        <a href="Automating M R report Prosedures.pdf" target="_blank" download class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
+                                            Download Document <i class="fas fa-download ml-2"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
                 </div>
             </div>
         </section>
@@ -620,14 +640,22 @@
         document.addEventListener('DOMContentLoaded', function() {
             setupAccordions(); // Initial setup of accordions
 
-            // Attach event listener for the password-protected document button
+            // Attach event listener for the first password-protected document button
             const procedureDocButton = document.getElementById('procedureDocButton');
             if (procedureDocButton) {
                 procedureDocButton.addEventListener('click', function() {
-                    // Call the modified promptPasswordAndOpenDoc function
-                    promptPasswordAndOpenDoc('Steps in Certifying Training Record.pdf', 'certify123');
+                    promptPasswordAndOpenDoc('Steps in Certifying Training Record.pdf', 'certify123', 'processes'); // Added 'processes' to navigate back
                 });
             }
+
+            // Attach event listener for the NEW password-protected document button in Innovation
+            const innovationDocButton = document.getElementById('innovationDocButton');
+            if (innovationDocButton) {
+                innovationDocButton.addEventListener('click', function() {
+                    promptPasswordAndOpenDoc('Automating M R report Prosedures.pdf', 'mrreport2025', 'innovation'); // Added 'innovation' to navigate back
+                });
+            }
+
 
             // Show the initial page and update navigation buttons
             showPage(pageOrder[currentPageIndex]);
@@ -662,8 +690,8 @@
                 clearHighlights(); // Clear any previous search highlights
                 document.getElementById('searchInput').value = ''; // Clear search input
 
-                // If navigating to the 'processes' page, ensure accordions are reset
-                if (pageId === 'processes') {
+                // If navigating to the 'processes' or 'innovation' page, ensure accordions are reset
+                if (pageId === 'processes' || pageId === 'innovation') {
                     setupAccordions(); // Re-initialize accordions to ensure they are closed
                 }
             }
@@ -783,7 +811,7 @@
         }
 
         // Function to prompt password and open/download document
-        function promptPasswordAndOpenDoc(docPath, correctPassword) {
+        function promptPasswordAndOpenDoc(docPath, correctPassword, returnPageId) {
             // Create the modal element if it doesn't exist
             let modal = document.getElementById('passwordModal');
             if (!modal) {
@@ -856,7 +884,7 @@
             // Event listener for the new "Close" button after download link appears
             closeModalAfterDownloadBtn.onclick = function() {
                 modal.style.display = 'none'; // Hide the modal
-                showPage('processes'); [cite_start]// Navigate back to the "Training Workflow" page [cite: 1]
+                showPage(returnPageId); // Navigate back to the specified return page
             };
 
 
