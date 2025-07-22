@@ -350,8 +350,6 @@
                                         <li>Certify courses after a course attendance is emailed by managers for certification.</li>
                                         <li>Utilize "<a href="https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx" target="_blank" class="text-red-700 hover:underline">SmartSolve</a>" and "<a href="https://hsv1amappw17.sanmina.com/siteminderagent/forms/login.fcc?TYPE=33554433&REALMOID=06-de5eabc8-da70-44d8-b688-9a3f1d60a97f&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=-SM-lwoo2YEXY4Ofz%2fXzgZ1Ki0dqd67eWUU1ATC98rmdPv0%2fl8coW1gHFwr9v7ESbUSC&TARGET=-SM-HTTP%3a%2f%2fhsv1amappw17%2esanmina%2ecom%2fmesweb%2fauthenticationredirect%2fredirect%2eashx%3fReturnUrl%3dhttp-%3a-%2f-%2fmesweb%2ecorptraining%2esanmina%2ecom-%2fDefault%2easpx" target="_blank" class="text-red-700 hover:underline">MESWeb</a>" (<span class="text-sm text-gray-500 break-all">https://hsv1amappw17.sanmina.com/siteminderagent/forms/login.fcc?TYPE=33554433&REALMOID=06-de5eabc8-da70-44d8-b688-9a3f1d60a97f&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=-SM-lwoo2YEXY4Ofz%2fXzgZ1Ki0dqd67eWUU1ATC98rmdPv0%2fl8coW1gHFwr9v7ESbUSC&TARGET=-SM-HTTP%3a%2f%2fhsv1amappw17%2esanmina%2ecom%2fmesweb%2fauthenticationredirect%2fredirect%2eashx%3fReturnUrl%3dhttp-%3a-%2f-%2fmesweb%2ecorptraining%2esanmina%2ecom-%2fDefault%2easpx</span>).</li>
                                         <li>Certify courses after a course attendance is emailed by managers for certification.</li>
-                                        <li>Utilize "<a href="https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx" target="_blank" class="text-red-700 hover:underline">SmartSolve</a>" and "<a href="https://hsv1amappw17.sanmina.com/siteminderagent/forms/login.fcc?TYPE=33554433&REALMOID=06-de5eabc8-da70-44d8-b688-9a3f1d60a97f&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=-SM-lwoo2YEXY4Ofz%2fXzgZ1Ki0dqd67eWUU1ATC98rmdPv0%2fl8coW1gHFwr9v7ESbUSC&TARGET=-SM-HTTP%3a%2f%2fhsv1amappw17%2esanmina%2ecom%2fmesweb%2fauthenticationredirect%2fredirect%2eashx%3fReturnUrl%3dhttp-%3a-%2f-%2fmesweb%2ecorptraining%2esanmina%2ecom-%2fDefault%2easpx" target="_blank" class="text-red-700 hover:underline">MESWeb</a>" (<span class="text-sm text-gray-500 break-all">https://hsv1amappw17.sanmina.com/siteminderagent/forms/login.fcc?TYPE=33554433&REALMOID=06-de5eabc8-da70-44d8-b688-9a3f1d60a97f&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=-SM-lwoo2YEXY4Ofz%2fXzgZ1Ki0dqd67eWUU1ATC98rmdPv0%2fl8coW1gHFwr9v7ESbUSC&TARGET=-SM-HTTP%3a%2f%2fhsv1amappw17%2esanmina%2ecom%2fmesweb%2fauthenticationredirect%2fredirect%2eashx%3fReturnUrl%3dhttp-%3a-%2f-%2fmesweb%2ecorptraining%2esanmina%2ecom-%2fDefault%2easpx</span>).</li>
-                                        <li>Certify courses after a course attendance is emailed by managers for certification.</li>
                                         <li>Add or deactivate training requirements as necessary.</li>
                                     </ul>
                                 </div>
@@ -482,7 +480,7 @@
                                     <p class="mb-2">Access the detailed document outlining the procedures for automating MR reports using AI. This document is password-protected for security.</p>
                                     <div id="innovationPdfActionContainer" style="display: none;" class="mt-4">
                                         <p class="text-gray-700 mb-2">Password: <span id="innovationDisplayedPassword"></span> (for demonstration purposes only)</p>
-                                        <a id="innovationDownloadLink" href="Automating M R report Prosedures.pdf" target="_blank" download class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
+                                        <a id="innovationDownloadLink" href="" target="_blank" download class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
                                             Download Document <i class="fas fa-download ml-2"></i>
                                         </a>
                                     </div>
@@ -554,7 +552,23 @@
                 </div>
             </div>
         </section>
-    </div> <footer class="bg-black text-white py-6 px-6 md:px-10 text-center rounded-b-lg">
+    </div> <div id="passwordModal" class="password-modal" style="display: none;">
+        <div class="password-modal-content">
+            <h4 id="modalTitle" class="text-xl font-semibold mb-4">Enter Password to View Document</h4>
+            <input type="password" id="docPassword" class="px-3 py-2 border border-gray-300 rounded-md w-full mb-4" placeholder="Password">
+            <button id="submitPassword" class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300 mr-2">Submit</button>
+            <button id="cancelPassword" class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition duration-300">Cancel</button>
+            <p id="passwordError" class="text-red-500 text-sm mt-2 hidden">Incorrect password. Please try again.</p>
+            <div id="pdfActionContainerInModal" style="display: none;" class="mt-4">
+                <p class="text-gray-700 mb-2">Password: <span id="displayedPassword"></span> (for demonstration purposes only)</p>
+                <a id="downloadLink" href="" target="_blank" download class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
+                    Download Document <i class="fas fa-download ml-2"></i>
+                </a>
+                <button id="closeModalAfterDownload" class="mt-4 bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition duration-300">Close</button>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-black text-white py-6 px-6 md:px-10 text-center rounded-b-lg">
         <div class="container mx-auto">
             <p>&copy; 2024 Sanmina Quality Assurance Department. All rights reserved.</p>
         </div>
@@ -574,7 +588,12 @@
     </button>
 
     <script>
-        // Get the buttons
+        // Global references for modal elements (initialized once DOM is ready)
+        let passwordModal, modalTitle, docPassword, submitPasswordBtn, cancelPasswordBtn,
+            passwordError, pdfActionContainerInModal, downloadLink, closeModalAfterDownloadBtn,
+            displayedPasswordSpan;
+
+        // Get the general navigation buttons
         var backToTopBtn = document.getElementById("backToTopBtn");
         var endOfPageBtn = document.getElementById("endOfPageBtn");
         var prevPageBtn = document.getElementById("prevPageBtn");
@@ -639,13 +658,26 @@
 
 
         document.addEventListener('DOMContentLoaded', function() {
+            // Get references to modal elements only once when the DOM is ready
+            passwordModal = document.getElementById('passwordModal');
+            modalTitle = document.getElementById('modalTitle');
+            docPassword = document.getElementById('docPassword');
+            submitPasswordBtn = document.getElementById('submitPassword');
+            cancelPasswordBtn = document.getElementById('cancelPassword');
+            passwordError = document.getElementById('passwordError');
+            pdfActionContainerInModal = document.getElementById('pdfActionContainerInModal');
+            downloadLink = document.getElementById('downloadLink');
+            closeModalAfterDownloadBtn = document.getElementById('closeModalAfterDownload');
+            displayedPasswordSpan = document.getElementById('displayedPassword');
+
+
             setupAccordions(); // Initial setup of accordions
 
             // Attach event listener for the first password-protected document button
             const procedureDocButton = document.getElementById('procedureDocButton');
             if (procedureDocButton) {
                 procedureDocButton.addEventListener('click', function() {
-                    promptPasswordAndOpenDoc('Steps in Certifying Training Record.pdf', 'certify123', 'processes'); // Added 'processes' to navigate back
+                    promptPasswordAndOpenDoc('Steps in Certifying Training Record.pdf', 'certify123', 'processes');
                 });
             }
 
@@ -653,7 +685,7 @@
             const innovationDocButton = document.getElementById('innovationDocButton');
             if (innovationDocButton) {
                 innovationDocButton.addEventListener('click', function() {
-                    promptPasswordAndOpenDoc('Automating M R report Prosedures.pdf', 'certify123', 'innovation'); // Password changed to certify123
+                    promptPasswordAndOpenDoc('Automating M R report Prosedures.pdf', 'certify123', 'innovation');
                 });
             }
 
@@ -813,44 +845,7 @@
 
         // Function to prompt password and open/download document
         function promptPasswordAndOpenDoc(docPath, correctPassword, returnPageId) {
-            // Create the modal element if it doesn't exist
-            let modal = document.getElementById('passwordModal');
-            if (!modal) {
-                modal = document.createElement('div');
-                modal.id = 'passwordModal';
-                modal.className = 'password-modal';
-                modal.innerHTML = `
-                    <div class="password-modal-content">
-                        <h4 id="modalTitle" class="text-xl font-semibold mb-4">Enter Password to View Document</h4>
-                        <input type="password" id="docPassword" class="px-3 py-2 border border-gray-300 rounded-md w-full mb-4" placeholder="Password">
-                        <button id="submitPassword" class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300 mr-2">Submit</button>
-                        <button id="cancelPassword" class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition duration-300">Cancel</button>
-                        <p id="passwordError" class="text-red-500 text-sm mt-2 hidden">Incorrect password. Please try again.</p>
-                        <div id="pdfActionContainerInModal" style="display: none;" class="mt-4">
-                            <p class="text-gray-700 mb-2">Password: <span id="displayedPassword"></span> (for demonstration purposes only)</p>
-                            <a id="downloadLink" href="" target="_blank" download class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
-                                Download Document <i class="fas fa-download ml-2"></i>
-                            </a>
-                            <button id="closeModalAfterDownload" class="mt-4 bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition duration-300">Close</button>
-                        </div>
-                    </div>
-                `;
-                document.body.appendChild(modal);
-            }
-
-            // Get references to elements within the modal
-            const modalTitle = document.getElementById('modalTitle');
-            const docPassword = document.getElementById('docPassword');
-            const submitPasswordBtn = document.getElementById('submitPassword');
-            const cancelPasswordBtn = document.getElementById('cancelPassword');
-            const passwordError = document.getElementById('passwordError');
-            const pdfActionContainerInModal = document.getElementById('pdfActionContainerInModal');
-            const downloadLink = document.getElementById('downloadLink');
-            const closeModalAfterDownloadBtn = document.getElementById('closeModalAfterDownload');
-            const displayedPasswordSpan = document.getElementById('displayedPassword');
-
-
-            // Reset modal state
+            // Reset modal elements' states
             modalTitle.innerText = 'Enter Password to View Document';
             docPassword.value = '';
             docPassword.style.display = 'block';
@@ -864,9 +859,15 @@
             downloadLink.href = docPath;
             displayedPasswordSpan.textContent = `\`${correctPassword}\``; // Correctly sets the hint from the passed argument
 
-            modal.style.display = 'flex'; // Make modal visible
+            passwordModal.style.display = 'flex'; // Make modal visible
 
-            // Event listener for Submit button inside the modal
+            // Clear previous event listeners to prevent multiple bindings
+            submitPasswordBtn.onclick = null;
+            cancelPasswordBtn.onclick = null;
+            closeModalAfterDownloadBtn.onclick = null;
+            docPassword.removeEventListener('keydown', handleDocPasswordKeydown); // Remove previous listener for keydown
+
+            // Add new event listeners
             submitPasswordBtn.onclick = function() {
                 const enteredPassword = docPassword.value.trim();
                 if (enteredPassword === correctPassword) {
@@ -874,32 +875,31 @@
                     modalTitle.innerText = 'Document Ready for Download';
                     docPassword.style.display = 'none';
                     submitPasswordBtn.style.display = 'none';
-                    cancelPasswordBtn.style.display = 'none';
+                    cancelPasswordBtn.style.display = 'none'; // Hide initial cancel button
                     pdfActionContainerInModal.style.display = 'block';
                 } else {
                     passwordError.classList.remove('hidden');
                 }
             };
 
-            // Event listener for Cancel button inside the modal (initial state)
             cancelPasswordBtn.onclick = function() {
-                modal.style.display = 'none';
+                passwordModal.style.display = 'none';
             };
 
-            // Event listener for the new "Close" button after download link appears
             closeModalAfterDownloadBtn.onclick = function() {
-                modal.style.display = 'none';
+                passwordModal.style.display = 'none';
                 showPage(returnPageId);
             };
 
+            // Re-add keydown listener
+            docPassword.addEventListener('keydown', handleDocPasswordKeydown);
 
-            // Allow pressing Enter key in password input
-            docPassword.addEventListener('keydown', function(event) {
+            function handleDocPasswordKeydown(event) {
                 if (event.key === 'Enter' || event.keyCode === 13) {
                     event.preventDefault();
                     submitPasswordBtn.click();
                 }
-            });
+            }
         }
     </script>
 
