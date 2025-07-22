@@ -383,8 +383,8 @@
                                 <div class="p-4 text-gray-700">
                                     <p class="mb-2">We use <a href="https://sanminanet.sanmina.com/" target="_blank" class="text-red-700 hover:underline">SanminaNet</a> (<span class="text-sm text-gray-500 break-all">https://sanminanet.sanmina.com/</span>) and its NAMETOOL to efficiently manage employee information for training purposes.</p>
                                     <ul class="list-disc list-inside ml-4">
-                                        <li>**NAMETOOL:** Used to obtain employee Oracle numbers by entering their name, which is required for certifying any training record.</li>
-                                        <li>**<a href="https://plmprod.sanmina.com/Agile/PCMServlet" target="_blank" class="text-red-700 hover:underline">Agile</a>:** (<span class="text-sm text-gray-500 break-all">https://plmprod.sanmina.com/Agile/PCMServlet</span>) Utilized to check for the newest revision details, training requirements, and for document pulling.</li>
+                                        <li>NAMETOOL: Used to obtain employee Oracle numbers by entering their name, which is required for certifying any training record.</li>
+                                        <li>Agile: (<span class="text-sm text-gray-500 break-all">https://plmprod.sanmina.com/Agile/PCMServlet</span>) Utilized to check for the newest revision details, training requirements, and for document pulling.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -445,24 +445,19 @@
                                     <p class="mb-2">We successfully implemented a Work Improvement Project focused on automating data filtering and chart generation using AI, specifically programmed with "App Script" and deployed via "Gemini".</p>
                                     <h4 class="text-xl font-semibold text-red-700 mb-2">Project Details:</h4>
                                     <ul class="list-disc list-inside ml-4 mb-4">
-                                        <li>The code automates data segmentation (filtering data) to generate biweekly reports.</li>
-                                        <li>It automatically generates bar charts based on the filtered data.</li>
-                                    </ul>
-                                    <h4 class="text-xl font-semibold text-red-700 mb-2">Key Benefits:</h4>
-                                    <ul class="list-disc list-inside ml-4 mb-4">
-                                        <li>**Time Savings:** Reduced the time experienced trainers spend on filtering data and producing bar charts from up to 2 hours down to just 5 minutes.</li>
-                                        <li>**Simplified Job Scope:** Streamlined the process, making tasks more efficient.</li>
-                                        <li>**Cost Reduction:** Contributed to cutting operational costs.</li>
+                                        <li>Time Savings: Reduced the time experienced trainers spend on filtering data and producing bar charts from up to 2 hours down to just 5 minutes.</li>
+                                        <li>Simplified Job Scope: Streamlined the process, making tasks more efficient.</li>
+                                        <li>Cost Reduction: Contributed to cutting operational costs.</li>
                                     </ul>
                                     <p class="mb-2">This project was presented in a staff communication session (highlighting new projects & KPIs) and was eligible for a Lean Six Sigma (LSS) conventional project.</p>
                                     <p class="mb-4">The code's accuracy was verified through manual filtering, ensuring reliability.</p>
 
                                     <h4 class="text-xl font-semibold text-red-700 mb-2">Challenges & Solutions:</h4>
                                     <ul class="list-disc list-inside ml-4">
-                                        <li>**Challenge: Decoding code and generating automation of charts.**
+                                        <li>Challenge: Decoding code and generating automation of charts.
                                             <br>Solution: Extensive research, understanding of code, and leveraging AI assistance. For chart automation, we utilized other applications.
                                         </li>
-                                        <li>**Challenge: Certifying training records requires constant detail and can be draining.**
+                                        <li>Challenge: Certifying training records requires constant detail and can be draining.
                                             <br>Solution: Implementing regular breaks and utilizing post-it notes for meticulous double-checking.
                                         </li>
                                     </ul>
@@ -478,7 +473,7 @@
                             <div class="accordion-content">
                                 <div class="p-4 text-gray-700">
                                     <p class="mb-2">Access the detailed document outlining the procedures for automating MR reports using AI. This document is password-protected for security.</p>
-                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -532,408 +527,376 @@
             </div>
         </section>
 
-        <section id="contact" class="page-section hidden" data-page="contact">
-            <div class="py-16 px-6 md:px-10 bg-gradient-to-r from-red-800 to-black text-white rounded-t-lg shadow-lg mx-auto my-10 max-w-6xl">
-                <div class="container mx-auto max-w-3xl text-center">
-                    <h3 class="text-3xl font-bold mb-6">Get in Touch with Our QA Team</h3>
-                    <p class="text-lg mb-8 opacity-90">
-                        Have questions about our compliance training or quality assurance processes? Feel free to reach out to us.
-                    </p>
-                    <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl">
-                        <p class="text-xl font-semibold mb-4">Email: <a href="mailto:nursabrina.mohdredwankhoo@sanmina.com" class="text-red-700 hover:underline">nursabrina.mohdredwankhoo@sanmina.com</a></p>
-                        <p class="text-md mt-6 text-gray-600">Sanmina Corporation, [Your Department Address Here]</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    <div id="passwordModal" class="password-modal" style="display: none;">
-        <div class="password-modal-content">
-            <h4 id="modalTitle" class="text-xl font-semibold mb-4">Enter Password to View Document</h4>
-            <input type="password" id="docPassword" class="px-3 py-2 border border-gray-300 rounded-md w-full mb-4" placeholder="Password">
-            <button id="submitPassword" class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300 mr-2">Submit</button>
-            <button id="cancelPassword" class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition duration-300">Cancel</button>
-            <p id="passwordError" class="text-red-500 text-sm mt-2 hidden">Incorrect password. Please try again.</p>
-            <div id="pdfActionContainerInModal" style="display: none;" class="mt-4">
-                <p class="text-gray-700 mb-2">Password: <span id="displayedPassword"></span> (for demonstration purposes only)</p>
-                <a id="downloadLink" href="" target="_blank" download class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
-                    Download Document <i class="fas fa-download ml-2"></i>
-                </a>
-                <button id="closeModalAfterDownload" class="mt-4 bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition duration-300">Close</button>
-            </div>
-        </div>
-    </div>
-    <footer class="bg-black text-white py-6 px-6 md:px-10 text-center rounded-b-lg">
-        <div class="container mx-auto">
-            <p>&copy; 2024 Sanmina Quality Assurance Department. All rights reserved.</p>
-        </div>
-    </footer>
+        <section id="contact" class="page-section hidden" data-page="contact">
+            <div class="py-16 px-6 md:px-10 bg-gradient-to-r from-red-800 to-black text-white rounded-t-lg shadow-lg mx-auto my-10 max-w-6xl">
+                <div class="container mx-auto max-w-3xl text-center">
+                    <h3 class="text-3xl font-bold mb-6">Get in Touch with Our QA Team</h3>
+                    <p class="text-lg mb-8 opacity-90">
+                        Have questions about our compliance training or quality assurance processes? Feel free to reach out to us.
+                    </p>
+                    <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl">
+                        <p class="text-xl font-semibold mb-4">Email: <a href="mailto:nursabrina.mohdredwankhoo@sanmina.com" class="text-red-700 hover:underline">nursabrina.mohdredwankhoo@sanmina.com</a></p>
+                        <p class="text-md mt-6 text-gray-600">Sanmina Corporation, [Your Department Address Here]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="passwordModal" class="password-modal" style="display: none;">
+        <div class="password-modal-content">
+            <h4 id="modalTitle" class="text-xl font-semibold mb-4">Enter Password to View Document</h4>
+            <input type="password" id="docPassword" class="px-3 py-2 border border-gray-300 rounded-md w-full mb-4" placeholder="Password">
+            <button id="submitPassword" class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300 mr-2">Submit</button>
+            <button id="cancelPassword" class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition duration-300">Cancel</button>
+            <p id="passwordError" class="text-red-500 text-sm mt-2 hidden">Incorrect password. Please try again.</p>
+            <div id="pdfActionContainerInModal" style="display: none;" class="mt-4">
+                <p class="text-gray-700 mb-2">Password: <span id="displayedPassword"></span> (for demonstration purposes only)</p>
+                <a id="downloadLink" href="" target="_blank" download class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
+                    Download Document <i class="fas fa-download ml-2"></i>
+                </a>
+                <button id="closeModalAfterDownload" class="mt-4 bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition duration-300">Close</button>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-black text-white py-6 px-6 md:px-10 text-center rounded-b-lg">
+        <div class="container mx-auto">
+            <p>&copy; 2024 Sanmina Quality Assurance Department. All rights reserved.</p>
+        </div>
+    </footer>
 
-    <button onclick="topFunction()" id="backToTopBtn" class="floating-btn" title="Go to top">
-        <i class="fas fa-arrow-up"></i> Top
-    </button>
-    <button onclick="endFunction()" id="endOfPageBtn" class="floating-btn" title="Go to end">
-        <i class="fas fa-arrow-down"></i> End
-    </button>
-    <button onclick="prevPage()" id="prevPageBtn" class="floating-btn" title="Previous Page">
-        <i class="fas fa-chevron-left"></i>
-    </button>
-    <button onclick="nextPage()" id="nextPageBtn" class="floating-btn" title="Next Page">
-        <i class="fas fa-chevron-right"></i>
-    </button>
+    <button onclick="topFunction()" id="backToTopBtn" class="floating-btn" title="Go to top">
+        <i class="fas fa-arrow-up"></i> Top
+    </button>
+    <button onclick="endFunction()" id="endOfPageBtn" class="floating-btn" title="Go to end">
+        <i class="fas fa-arrow-down"></i> End
+    </button>
+    <button onclick="prevPage()" id="prevPageBtn" class="floating-btn" title="Previous Page">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <button onclick="nextPage()" id="nextPageBtn" class="floating-btn" title="Next Page">
+        <i class="fas fa-chevron-right"></i>
+    </button>
 
-    <script>
-        // Global references for modal elements (initialized once DOM is ready)
-        let passwordModal, modalTitle, docPassword, submitPasswordBtn, cancelPasswordBtn,
-            passwordError, pdfActionContainerInModal, downloadLink, closeModalAfterDownloadBtn,
-            displayedPasswordSpan;
+    <script>
+        // Global references for modal elements (initialized once DOM is ready)
+        let passwordModal, modalTitle, docPassword, submitPasswordBtn, cancelPasswordBtn,
+            passwordError, pdfActionContainerInModal, downloadLink, closeModalAfterDownloadBtn,
+            displayedPasswordSpan;
 
-        // Get the general navigation buttons
-        var backToTopBtn = document.getElementById("backToTopBtn");
-        var endOfPageBtn = document.getElementById("endOfPageBtn");
-        var prevPageBtn = document.getElementById("prevPageBtn");
-        var nextPageBtn = document.getElementById("nextPageBtn");
+        // Get the general navigation buttons
+        var backToTopBtn = document.getElementById("backToTopBtn");
+        var endOfPageBtn = document.getElementById("endOfPageBtn");
+        var prevPageBtn = document.getElementById("prevPageBtn");
+        var nextPageBtn = document.getElementById("nextPageBtn");
 
-        // Page order for navigation
-        var pageOrder = ['home-about', 'training', 'processes', 'innovation', 'activities', 'contact'];
-        var currentPageIndex = 0; // Initialize current page index
-        var originalContent = {}; // Store original content to revert highlights
+        // Page order for navigation
+        var pageOrder = ['home-about', 'training', 'processes', 'innovation', 'activities', 'contact'];
+        var currentPageIndex = 0; // Initialize current page index
+        var originalContent = {}; // Store original content to revert highlights
 
-        // When the user scrolls down 20px from the top of the document, show the top/end buttons
-        window.onscroll = function() {scrollFunction()};
+        // When the user scrolls down 20px from the top of the document, show the top/end buttons
+        window.onscroll = function() {scrollFunction()};
 
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                backToTopBtn.style.display = "block";
-                endOfPageBtn.style.display = "block";
-            } else {
-                backToTopBtn.style.display = "none";
-                endOfPageBtn.style.display = "none";
-            }
-        }
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopBtn.style.display = "block";
+                endOfPageBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        }
 
-        // When the user clicks on the "Top" button, scroll to the top of the document
-        function topFunction() {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-        }
+        // When the user clicks on the "Top" button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
 
-        // When the user clicks on the "End" button, scroll to the end of the current page
-        function endFunction() {
-            const activePage = document.querySelector('.page-section.active');
-            if (activePage) {
-                activePage.scrollIntoView({ behavior: 'smooth', block: 'end' });
-            }
-        }
+        // When the user clicks on the "End" button, scroll to the end of the current page
+        function endFunction() {
+            const activePage = document.querySelector('.page-section.active');
+            if (activePage) {
+                activePage.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            }
+        }
 
-        // Accordion functionality
-        function setupAccordions() {
-            const accordionButtons = document.querySelectorAll('.accordion-button');
-            accordionButtons.forEach(button => {
-                // Remove existing listeners to prevent multiple bindings if called multiple times
-                button.removeEventListener('click', toggleAccordion);
-                // Add new listener
-                button.addEventListener('click', toggleAccordion);
+        // Accordion functionality
+        function setupAccordions() {
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+            accordionButtons.forEach(button => {
+                // Remove existing listeners to prevent multiple bindings if called multiple times
+                button.removeEventListener('click', toggleAccordion);
+                // Add new listener
+                button.addEventListener('click', toggleAccordion);
 
-                // Ensure accordions are closed by default when setting up
-                button.classList.remove('active');
-                button.nextElementSibling.style.maxHeight = null;
-            });
-        }
+                // Ensure accordions are closed by default when setting up
+                button.classList.remove('active');
+                button.nextElementSibling.style.maxHeight = null;
+            });
+        }
 
-        function toggleAccordion() {
-            this.classList.toggle('active');
-            const content = this.nextElementSibling;
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-            }
-        }
-
-
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get references to modal elements only once when the DOM is ready
-            passwordModal = document.getElementById('passwordModal');
-            modalTitle = document.getElementById('modalTitle');
-            docPassword = document.getElementById('docPassword');
-            submitPasswordBtn = document.getElementById('submitPassword');
-            cancelPasswordBtn = document.getElementById('cancelPassword');
-            passwordError = document.getElementById('passwordError');
-            pdfActionContainerInModal = document.getElementById('pdfActionContainerInModal');
-            downloadLink = document.getElementById('downloadLink');
-            closeModalAfterDownloadBtn = document.getElementById('closeModalAfterDownload');
-            displayedPasswordSpan = document.getElementById('displayedPassword');
+        function toggleAccordion() {
+            this.classList.toggle('active');
+            const content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
 
 
-            setupAccordions(); // Initial setup of accordions
-
-            // Attach event listener for the first password-protected document button
-            const procedureDocButton = document.getElementById('procedureDocButton');
-            if (procedureDocButton) {
-                procedureDocButton.addEventListener('click', function() {
-                    // This button's content area already has the download link
-                    // The promptPasswordAndOpenDoc needs to handle showing/hiding that specific div.
-                    promptPasswordAndOpenDoc('Steps in Certifying Training Record.pdf', 'certify123', 'processes', 'pdfActionContainer'); // Pass the ID of its specific action container
-                });
-            }
-
-            // Attach event listener for the NEW password-protected document button in Innovation
-            const innovationDocButton = document.getElementById('innovationDocButton');
-            if (innovationDocButton) {
-                innovationDocButton.addEventListener('click', function() {
-                    // No separate action container in HTML for innovation, it will use the main modal's.
-                    promptPasswordAndOpenDoc('Automating M R report Prosedures.pdf', 'certify123', 'innovation');
-                });
-            }
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get references to modal elements only once when the DOM is ready
+            passwordModal = document.getElementById('passwordModal');
+            modalTitle = document.getElementById('modalTitle');
+            docPassword = document.getElementById('docPassword');
+            submitPasswordBtn = document.getElementById('submitPassword');
+            cancelPasswordBtn = document.getElementById('cancelPassword');
+            passwordError = document.getElementById('passwordError');
+            pdfActionContainerInModal = document.getElementById('pdfActionContainerInModal');
+            downloadLink = document.getElementById('downloadLink');
+            closeModalAfterDownloadBtn = document.getElementById('closeModalAfterDownload');
+            displayedPasswordSpan = document.getElementById('displayedPassword');
 
 
-            // Show the initial page and update navigation buttons
-            showPage(pageOrder[currentPageIndex]);
+            setupAccordions(); // Initial setup of accordions
 
-            // Event listener for "Enter" key on search input
-            const searchInput = document.getElementById('searchInput');
-            searchInput.addEventListener('keydown', function(event) {
-                if (event.key === 'Enter' || event.keyCode === 13) {
-                    event.preventDefault(); // Prevent default form submission behavior
-                    performSearch();
-                }
-            });
-        });
+            // Attach event listener for the first password-protected document button
+            const procedureDocButton = document.getElementById('procedureDocButton');
+            if (procedureDocButton) {
+                procedureDocButton.addEventListener('click', function() {
+                    // Note: For this button, the pdfActionContainer div is specific to this accordion in the HTML.
+                    // We will modify this to use the universal modal's download capabilities as well.
+                    promptPasswordAndOpenDoc('Steps in Certifying Training Record.pdf', 'certify123', 'processes');
+                });
+            }
 
-        // --- Page Navigation Logic ---
-        /**
-         * Hides all page sections and displays the requested one.
-         * @param {string} pageId The ID of the section to display (e.g., 'home-about', 'training').
-         */
-        function showPage(pageId) {
-            const pageSections = document.querySelectorAll('.page-section');
-            pageSections.forEach(section => {
-                section.classList.add('hidden'); // Hide all sections
-                section.classList.remove('active'); // Remove active class
-            });
+            // Attach event listener for the NEW password-protected document button in Innovation
+            const innovationDocButton = document.getElementById('innovationDocButton');
+            if (innovationDocButton) {
+                innovationDocButton.addEventListener('click', function() {
+                    promptPasswordAndOpenDoc('Automating M R report Prosedures.pdf', 'certify123', 'innovation');
+                });
+            }
 
-            const targetPage = document.getElementById(pageId);
-            if (targetPage) {
-                targetPage.classList.remove('hidden'); // Show the target section
-                targetPage.classList.add('active'); // Add active class
-                window.scrollTo(0, 0); // Scroll to top of the new page
-                clearHighlights(); // Clear any previous search highlights
-                document.getElementById('searchInput').value = ''; // Clear search input
 
-                // If navigating to the 'processes' or 'innovation' page, ensure accordions are reset
-                if (pageId === 'processes' || pageId === 'innovation') {
-                    setupAccordions(); // Re-initialize accordions to ensure they are closed
-                }
-            }
-            updatePageNavigationButtons(); // Update prev/next button visibility
-        }
+            // Show the initial page and update navigation buttons
+            showPage(pageOrder[currentPageIndex]);
 
-        /**
-         * Navigates to the next page in the defined order.
-         */
-        function nextPage() {
-            if (currentPageIndex < pageOrder.length - 1) {
-                currentPageIndex++;
-                showPage(pageOrder[currentPageIndex]);
-            }
-        }
+            // Event listener for "Enter" key on search input
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter' || event.keyCode === 13) {
+                    event.preventDefault(); // Prevent default form submission behavior
+                    performSearch();
+                }
+            });
+        });
 
-        /**
-         * Navigates to the previous page in the defined order.
-         */
-        function prevPage() {
-            if (currentPageIndex > 0) {
-                currentPageIndex--;
-                showPage(pageOrder[currentPageIndex]);
-            }
-        }
+        // --- Page Navigation Logic ---
+        /**
+         * Hides all page sections and displays the requested one.
+         * @param {string} pageId The ID of the section to display (e.g., 'home-about', 'training').
+         */
+        function showPage(pageId) {
+            const pageSections = document.querySelectorAll('.page-section');
+            pageSections.forEach(section => {
+                section.classList.add('hidden'); // Hide all sections
+                section.classList.remove('active'); // Remove active class
+            });
 
-        /**
-         * Updates the visibility of the next and previous page buttons.
-         */
-        function updatePageNavigationButtons() {
-            if (currentPageIndex === 0) {
-                prevPageBtn.style.display = 'none';
-            } else {
-                prevPageBtn.style.display = 'block';
-            }
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.remove('hidden'); // Show the target section
+                targetPage.classList.add('active'); // Add active class
+                window.scrollTo(0, 0); // Scroll to top of the new page
+                clearHighlights(); // Clear any previous search highlights
+                document.getElementById('searchInput').value = ''; // Clear search input
 
-            if (currentPageIndex === pageOrder.length - 1) {
-                nextPageBtn.style.display = 'none';
-            } else {
-                nextPageBtn.style.display = 'block';
-            }
-        }
+                // If navigating to the 'processes' or 'innovation' page, ensure accordions are reset
+                if (pageId === 'processes' || pageId === 'innovation') {
+                    setupAccordions(); // Re-initialize accordions to ensure they are closed
+                }
+            }
+            updatePageNavigationButtons(); // Update prev/next button visibility
+        }
 
-        // --- Search Functionality Logic ---
-        /**
-         * Performs a search on the currently active page and highlights matches.
-         */
-        function performSearch() {
-            const searchTerm = document.getElementById('searchInput').value.trim();
-            clearHighlights(); // Clear previous highlights before searching
+        /**
+         * Navigates to the next page in the defined order.
+         */
+        function nextPage() {
+            if (currentPageIndex < pageOrder.length - 1) {
+                currentPageIndex++;
+                showPage(pageOrder[currentPageIndex]);
+            }
+        }
 
-            if (!searchTerm) {
-                return; // Do nothing if search term is empty
-            }
+        /**
+         * Navigates to the previous page in the defined order.
+         */
+        function prevPage() {
+            if (currentPageIndex > 0) {
+                currentPageIndex--;
+                showPage(pageOrder[currentPageIndex]);
+            }
+        }
 
-            let foundMatch = false;
+        /**
+         * Updates the visibility of the next and previous page buttons.
+         */
+        function updatePageNavigationButtons() {
+            if (currentPageIndex === 0) {
+                prevPageBtn.style.display = 'none';
+            } else {
+                prevPageBtn.style.display = 'block';
+            }
 
-            // Iterate through all pages to search
-            for (let i = 0; i < pageOrder.length; i++) {
-                const pageId = pageOrder[i];
-                const pageElement = document.getElementById(pageId);
+            if (currentPageIndex === pageOrder.length - 1) {
+                nextPageBtn.style.display = 'none';
+            } else {
+                nextPageBtn.style.display = 'block';
+            }
+        }
 
-                // Ensure originalContent is stored for this page
-                if (!originalContent[pageId]) {
-                    originalContent[pageId] = pageElement.innerHTML;
-                }
+        // --- Search Functionality Logic ---
+        /**
+         * Performs a search on the currently active page and highlights matches.
+         */
+        function performSearch() {
+            const searchTerm = document.getElementById('searchInput').value.trim();
+            clearHighlights(); // Clear previous highlights before searching
 
-                const regex = new RegExp(`(${searchTerm})`, 'gi');
-                let contentHtml = originalContent[pageId];
+            if (!searchTerm) {
+                return; // Do nothing if search term is empty
+            }
 
-                // Check if the search term exists on this page
-                if (regex.test(contentHtml)) {
-                    // If a match is found, navigate to this page
-                    showPage(pageId);
-                    currentPageIndex = i; // Update current page index
-                    foundMatch = true;
+            let foundMatch = false;
 
-                    // Apply highlight to the active page
-                    const highlightedHtml = contentHtml.replace(regex, `<span class="highlight">$1</span>`);
-                    pageElement.innerHTML = highlightedHtml;
+            // Iterate through all pages to search
+            for (let i = 0; i < pageOrder.length; i++) {
+                const pageId = pageOrder[i];
+                const pageElement = document.getElementById(pageId);
 
-                    // Scroll to the first highlighted instance on the newly active page
-                    const firstHighlight = pageElement.querySelector('.highlight');
-                    if (firstHighlight) {
-                        firstHighlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                    break; // Stop after finding and displaying the first match
-                }
-            }
+                // Ensure originalContent is stored for this page
+                if (!originalContent[pageId]) {
+                    originalContent[pageId] = pageElement.innerHTML;
+                }
 
-            if (!foundMatch) {
-                // Use a custom modal or message box instead of alert()
-                const messageBox = document.createElement('div');
-                messageBox.className = 'fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-[100]';
-                messageBox.innerHTML = `
-                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
-                        <p class="text-lg font-semibold mb-4">No results found for "${searchTerm}" on any page.</p>
-                        <button onclick="this.parentNode.parentNode.remove()" class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
-                            OK
-                        </button>
-                    </div>
-                `;
-                document.body.appendChild(messageBox);
-            }
-        }
+                const regex = new RegExp(`(${searchTerm})`, 'gi');
+                let contentHtml = originalContent[pageId];
 
-        /**
-         * Clears all search highlights on all pages.
-         */
-        function clearHighlights() {
-            for (const pageId of pageOrder) {
-                const pageElement = document.getElementById(pageId);
-                if (pageElement && originalContent[pageId]) {
-                    pageElement.innerHTML = originalContent[pageId]; // Revert to original content
-                }
-            }
-        }
+                // Check if the search term exists on this page
+                if (regex.test(contentHtml)) {
+                    // If a match is found, navigate to this page
+                    showPage(pageId);
+                    currentPageIndex = i; // Update current page index
+                    foundMatch = true;
 
-        // Function to prompt password and open/download document
-        function promptPasswordAndOpenDoc(docPath, correctPassword, returnPageId, specificPdfActionContainerId = null) {
-            // Reset modal elements' states
-            modalTitle.innerText = 'Enter Password to View Document';
-            docPassword.value = '';
-            docPassword.style.display = 'block';
-            submitPasswordBtn.style.display = 'inline-block';
-            cancelPasswordBtn.style.display = 'inline-block';
-            cancelPasswordBtn.innerText = 'Cancel';
-            passwordError.classList.add('hidden');
+                    // Apply highlight to the active page
+                    const highlightedHtml = contentHtml.replace(regex, `<span class="highlight">$1</span>`);
+                    pageElement.innerHTML = highlightedHtml;
 
-            // Hide the universal modal's PDF action container by default
-            pdfActionContainerInModal.style.display = 'none';
+                    // Scroll to the first highlighted instance on the newly active page
+                    const firstHighlight = pageElement.querySelector('.highlight');
+                    if (firstHighlight) {
+                        firstHighlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                    break; // Stop after finding and displaying the first match
+                }
+            }
 
-            // Hide any specific, in-page PDF action containers
-            // This is crucial to ensure only the relevant one is shown after validation
-            if (document.getElementById('pdfActionContainer')) {
-                document.getElementById('pdfActionContainer').style.display = 'none';
-            }
-            // Removed specific innovationPdfActionContainer HTML, so no need to hide it here.
+            if (!foundMatch) {
+                // Use a custom modal or message box instead of alert()
+                const messageBox = document.createElement('div');
+                messageBox.className = 'fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-[100]';
+                messageBox.innerHTML = `
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <p class="text-lg font-semibold mb-4">No results found for "${searchTerm}" on any page.</p>
+                        <button onclick="this.parentNode.parentNode.remove()" class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
+                            OK
+                        </button>
+                    </div>
+                `;
+                document.body.appendChild(messageBox);
+            }
+        }
 
-            // Set the download link href and displayed password hint for the universal modal
-            downloadLink.href = docPath;
-            downloadLink.setAttribute('download', docPath.split('/').pop());
-            displayedPasswordSpan.textContent = `\`${correctPassword}\``;
+        /**
+         * Clears all search highlights on all pages.
+         */
+        function clearHighlights() {
+            for (const pageId of pageOrder) {
+                const pageElement = document.getElementById(pageId);
+                if (pageElement && originalContent[pageId]) {
+                    pageElement.innerHTML = originalContent[pageId]; // Revert to original content
+                }
+            }
+        }
 
-            passwordModal.style.display = 'flex'; // Make modal visible
+        // Function to prompt password and open/download document
+        function promptPasswordAndOpenDoc(docPath, correctPassword, returnPageId) {
+            // Reset modal elements' states
+            modalTitle.innerText = 'Enter Password to View Document';
+            docPassword.value = '';
+            docPassword.style.display = 'block';
+            submitPasswordBtn.style.display = 'inline-block';
+            cancelPasswordBtn.style.display = 'inline-block';
+            cancelPasswordBtn.innerText = 'Cancel';
+            passwordError.classList.add('hidden');
+            pdfActionContainerInModal.style.display = 'none'; // Ensure the modal's download section is hidden initially
 
-            // Clear previous event listeners to prevent multiple bindings
-            submitPasswordBtn.onclick = null;
-            cancelPasswordBtn.onclick = null;
-            closeModalAfterDownloadBtn.onclick = null;
-            docPassword.removeEventListener('keydown', handleDocPasswordKeydown);
+            // Set the download link href and displayed password hint
+            downloadLink.href = docPath;
+            // Extract filename from docPath for the download attribute
+            const filename = docPath.substring(docPath.lastIndexOf('/') + 1);
+            downloadLink.setAttribute('download', filename);
+            displayedPasswordSpan.textContent = `\`${correctPassword}\``;
 
-            // Add new event listeners
-            submitPasswordBtn.onclick = function() {
-                const enteredPassword = docPassword.value.trim();
-                if (enteredPassword === correctPassword) {
-                    passwordError.classList.add('hidden');
-                    modalTitle.innerText = 'Document Ready for Download';
-                    docPassword.style.display = 'none';
-                    submitPasswordBtn.style.display = 'none';
-                    cancelPasswordBtn.style.display = 'none';
+            passwordModal.style.display = 'flex'; // Make modal visible
 
-                    // Determine which PDF action container to show
-                    if (specificPdfActionContainerId) {
-                        // If a specific in-page container ID is provided, show that one
-                        const specificContainer = document.getElementById(specificPdfActionContainerId);
-                        if (specificContainer) {
-                            specificContainer.style.display = 'block';
-                            // When an in-page container is shown, the modal itself should just close
-                            // Or, you might want to adjust the modal's internal visibility
-                            // For this case, we'll hide the modal's download section, as it's not used.
-                            pdfActionContainerInModal.style.display = 'none';
-                            // And the modal should probably close itself after the user clicks "Submit"
-                            // if the download link is shown elsewhere.
-                            passwordModal.style.display = 'none';
-                            showPage(returnPageId); // Redirect back to the page to see the in-page link
-                        }
-                    } else {
-                        // Otherwise, show the universal modal's container (for the Innovation PDF)
-                        pdfActionContainerInModal.style.display = 'block';
-                        closeModalAfterDownloadBtn.style.display = 'block';
-                    }
-                } else {
-                    passwordError.classList.remove('hidden');
-                }
-            };
+            // Clear previous event listeners to prevent multiple bindings
+            submitPasswordBtn.onclick = null;
+            cancelPasswordBtn.onclick = null;
+            closeModalAfterDownloadBtn.onclick = null;
+            docPassword.removeEventListener('keydown', handleDocPasswordKeydown);
 
-            cancelPasswordBtn.onclick = function() {
-                passwordModal.style.display = 'none';
-                // Ensure any specific containers are hidden if modal is cancelled
-                if (document.getElementById('pdfActionContainer')) {
-                    document.getElementById('pdfActionContainer').style.display = 'none';
-                }
-                // No need to hide innovationPdfActionContainer as it's removed from HTML
-            };
+            // Add new event listeners
+            submitPasswordBtn.onclick = function() {
+                const enteredPassword = docPassword.value.trim();
+                if (enteredPassword === correctPassword) {
+                    passwordError.classList.add('hidden');
+                    modalTitle.innerText = 'Document Ready for Download';
+                    docPassword.style.display = 'none';
+                    submitPasswordBtn.style.display = 'none';
+                    cancelPasswordBtn.style.display = 'none'; // Hide initial cancel button
 
-            closeModalAfterDownloadBtn.onclick = function() {
-                passwordModal.style.display = 'none';
-                showPage(returnPageId);
-            };
+                    // Show the modal's download section
+                    pdfActionContainerInModal.style.display = 'block';
+                } else {
+                    passwordError.classList.remove('hidden');
+                }
+            };
 
-            // Re-add keydown listener for Enter key
-            docPassword.addEventListener('keydown', handleDocPasswordKeydown);
+            cancelPasswordBtn.onclick = function() {
+                passwordModal.style.display = 'none';
+            };
 
-            function handleDocPasswordKeydown(event) {
-                if (event.key === 'Enter' || event.keyCode === 13) {
-                    event.preventDefault();
-                    submitPasswordBtn.click();
-                }
-            }
-        }
-    </script>
+            closeModalAfterDownloadBtn.onclick = function() {
+                passwordModal.style.display = 'none';
+                showPage(returnPageId);
+            };
+
+            // Re-add keydown listener
+            docPassword.addEventListener('keydown', handleDocPasswordKeydown);
+
+            function handleDocPasswordKeydown(event) {
+                if (event.key === 'Enter' || event.keyCode === 13) {
+                    event.preventDefault();
+                    submitPasswordBtn.click();
+                }
+            }
+        }
+    </script>
 </body>
 </html>
