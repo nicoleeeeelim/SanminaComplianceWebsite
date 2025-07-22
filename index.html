@@ -348,6 +348,8 @@
                                     <ul class="list-disc list-inside ml-4">
                                         <li>Ensure employee, training module, and training date are correct when entering data into "<a href="https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx" target="_blank" class="text-red-700 hover:underline">SmartSolve</a>" (<span class="text-sm text-gray-500 break-all">https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx</span>).</li>
                                         <li>Certify courses after a course attendance is emailed by managers for certification.</li>
+                                        <li>Utilize "<a href="https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx" target="_blank" class="text-red-700 hover:underline">SmartSolve</a>" and "<a href="https://hsv1amappw17.sanmina.com/siteminderagent/forms/login.fcc?TYPE=33554433&REALMOID=06-de5eabc8-da70-44d8-b688-9a3f1d60a97f&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=-SM-lwoo2YEXY4Ofz%2fXzgZ1Ki0dqd67eWUU1ATC98rmdPv0%2fl8coW1gHFwr9v7ESbUSC&TARGET=-SM-HTTP%3a%2f%2fhsv1amappw17%2esanmina%2ecom%2fmesweb%2fauthenticationredirect%2fredirect%2eashx%3fReturnUrl%3dhttp-%3a-%2f-%2fmesweb%2ecorptraining%2esanmina%2ecom-%2fDefault%2easpx" target="_blank" class="text-red-700 hover:underline">MESWeb</a>" (<span class="text-sm text-gray-500 break-all">https://hsv1amappw17.sanmina.com/siteminderagent/forms/login.fcc?TYPE=33554433&REALMOID=06-de5eabc8-da70-44d8-b688-9a3f1d60a97f&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=-SM-lwoo2YEXY4Ofz%2fXzgZ1Ki0dqd67eWUU1ATC98rmdPv0%2fl8coW1gHFwr9v7ESbUSC&TARGET=-SM-HTTP%3a%2f%2fhsv1amappw17%2esanmina%2ecom%2fmesweb%2fauthenticationredirect%2fredirect%2eashx%3fReturnUrl%3dhttp-%3a-%2f-%2fmesweb%2ecorptraining%2esanmina%2ecom-%2fDefault%2easpx</span>).</li>
+                                        <li>Certify courses after a course attendance is emailed by managers for certification.</li>
                                         <li>Add or deactivate training requirements as necessary.</li>
                                     </ul>
                                 </div>
@@ -520,7 +522,7 @@
                                 <p class="text-gray-700">
                                     Proud to announce that several team members recently achieved their Certified Quality Auditor (CQA) certifications!
                                 </p>
-                            </div>
+                            </d>
                         </div>
                         <div class="bg-gray-100 p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-center space-x-6">
                             <img src="https://placehold.co/150x150/CCE0FF/003366?text=Orientation" alt="Orientation Training" class="rounded-full w-24 h-24 md:w-32 md:h-32 object-cover mb-4 md:mb-0">
@@ -683,6 +685,7 @@
             const innovationDocButton = document.getElementById('innovationDocButton');
             if (innovationDocButton) {
                 innovationDocButton.addEventListener('click', function() {
+                    // Correct filename with .pdf extension and ensure it's passed correctly
                     promptPasswordAndOpenDoc('Automating M R report Prosedures.pdf', 'certify123', 'innovation');
                 });
             }
@@ -854,8 +857,8 @@
             pdfActionContainerInModal.style.display = 'none';
 
             // Set the download link href and displayed password hint
-            downloadLink.href = docPath; // THIS IS THE CRITICAL LINE
-            downloadLink.setAttribute('download', docPath.split('/').pop()); // Set download attribute to filename
+            downloadLink.href = docPath; // THIS IS THE CRITICAL LINE FOR THE HREF
+            downloadLink.setAttribute('download', docPath.split('/').pop()); // Sets the filename for download
             displayedPasswordSpan.textContent = `\`${correctPassword}\``;
 
             passwordModal.style.display = 'flex'; // Make modal visible
