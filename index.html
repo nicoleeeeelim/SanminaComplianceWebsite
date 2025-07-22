@@ -173,7 +173,7 @@
         }
     </style>
 </head>
-<body class="text-gray-800">
+<body>
 
     <header class="bg-white shadow-md py-4 px-6 md:px-10 sticky top-0 z-50">
         <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
@@ -348,8 +348,6 @@
                                     <ul class="list-disc list-inside ml-4">
                                         <li>Ensure employee, training module, and training date are correct when entering data into "<a href="https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx" target="_blank" class="text-red-700 hover:underline">SmartSolve</a>" (<span class="text-sm text-gray-500 break-all">https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx</span>).</li>
                                         <li>Certify courses after a course attendance is emailed by managers for certification.</li>
-                                        <li>Utilize "<a href="https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx" target="_blank" class="text-red-700 hover:underline">SmartSolve</a>" and "<a href="https://hsv1amappw17.sanmina.com/siteminderagent/forms/login.fcc?TYPE=33554433&REALMOID=06-de5eabc8-da70-44d8-b688-9a3f1d60a97f&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=-SM-lwoo2YEXY4Ofz%2fXzgZ1Ki0dqd67eWUU1ATC98rmdPv0%2fl8coW1gHFwr9v7ESbUSC&TARGET=-SM-HTTP%3a%2f%2fhsv1amappw17%2esanmina%2ecom%2fmesweb%2fauthenticationredirect%2fredirect%2eashx%3fReturnUrl%3dhttp-%3a-%2f-%2fmesweb%2ecorptraining%2esanmina%2ecom-%2fDefault%2easpx" target="_blank" class="text-red-700 hover:underline">MESWeb</a>" (<span class="text-sm text-gray-500 break-all">https://hsv1amappw17.sanmina.com/siteminderagent/forms/login.fcc?TYPE=33554433&REALMOID=06-de5eabc8-da70-44d8-b688-9a3f1d60a97f&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=-SM-lwoo2YEXY4Ofz%2fXzgZ1Ki0dqd67eWUU1ATC98rmdPv0%2fl8coW1gHFwr9v7ESbUSC&TARGET=-SM-HTTP%3a%2f%2fhsv1amappw17%2esanmina%2ecom%2fmesweb%2fauthenticationredirect%2fredirect%2eashx%3fReturnUrl%3dhttp-%3a-%2f-%2fmesweb%2ecorptraining%2esanmina%2ecom-%2fDefault%2easpx</span>).</li>
-                                        <li>Certify courses after a course attendance is emailed by managers for certification.</li>
                                         <li>Add or deactivate training requirements as necessary.</li>
                                     </ul>
                                 </div>
@@ -417,7 +415,7 @@
                                     <p class="mb-2">Access the detailed procedure document for certifying training records. This document is password-protected for security.</p>
                                     <div id="pdfActionContainer" style="display: none;" class="mt-4">
                                         <p class="text-gray-700 mb-2">Password: `certify123` (for demonstration purposes only)</p>
-                                        <a href="Steps in Certifying Training Record.pdf" target="_blank" download class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
+                                        <a href="Steps in Certifying Training Record.pdf" target="_blank" download="Steps in Certifying Training Record.pdf" class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
                                             Download Document <i class="fas fa-download ml-2"></i>
                                         </a>
                                     </div>
@@ -856,8 +854,9 @@
             pdfActionContainerInModal.style.display = 'none';
 
             // Set the download link href and displayed password hint
-            downloadLink.href = docPath;
-            displayedPasswordSpan.textContent = `\`${correctPassword}\``; // Correctly sets the hint from the passed argument
+            downloadLink.href = docPath; // THIS IS THE CRITICAL LINE
+            downloadLink.setAttribute('download', docPath.split('/').pop()); // Set download attribute to filename
+            displayedPasswordSpan.textContent = `\`${correctPassword}\``;
 
             passwordModal.style.display = 'flex'; // Make modal visible
 
@@ -865,7 +864,7 @@
             submitPasswordBtn.onclick = null;
             cancelPasswordBtn.onclick = null;
             closeModalAfterDownloadBtn.onclick = null;
-            docPassword.removeEventListener('keydown', handleDocPasswordKeydown); // Remove previous listener for keydown
+            docPassword.removeEventListener('keydown', handleDocPasswordKeydown);
 
             // Add new event listeners
             submitPasswordBtn.onclick = function() {
@@ -875,7 +874,7 @@
                     modalTitle.innerText = 'Document Ready for Download';
                     docPassword.style.display = 'none';
                     submitPasswordBtn.style.display = 'none';
-                    cancelPasswordBtn.style.display = 'none'; // Hide initial cancel button
+                    cancelPasswordBtn.style.display = 'none';
                     pdfActionContainerInModal.style.display = 'block';
                 } else {
                     passwordError.classList.remove('hidden');
