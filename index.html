@@ -450,9 +450,9 @@
                                     </ul>
                                     <h4 class="text-xl font-semibold text-red-700 mb-2">Key Benefits:</h4>
                                     <ul class="list-disc list-inside ml-4 mb-4">
-                                        <li>**Time Savings:** Reduced the time experienced trainers spend on filtering data and producing bar charts from up to 2 hours down to just 5 minutes.</li>
+                                        [cite_start]<li>**Time Savings:** Reduced the time experienced trainers spend on filtering data and producing bar charts from up to 2 hours down to just 5 minutes. [cite: 13]</li>
                                         <li>**Simplified Job Scope:** Streamlined the process, making tasks more efficient.</li>
-                                        <li>**Cost Reduction:** Contributed to cutting operational costs.</li>
+                                        [cite_start]<li>**Cost Reduction:** Contributed to cutting operational costs. [cite: 31, 33]</li>
                                     </ul>
                                     <p class="mb-2">This project was presented in a staff communication session (highlighting new projects & KPIs) and was eligible for a Lean Six Sigma (LSS) conventional project.</p>
                                     <p class="mb-4">The code's accuracy was verified through manual filtering, ensuring reliability.</p>
@@ -478,19 +478,12 @@
                             <div class="accordion-content">
                                 <div class="p-4 text-gray-700">
                                     <p class="mb-2">Access the detailed document outlining the procedures for automating MR reports using AI. This document is password-protected for security.</p>
-                                    <div id="innovationPdfActionContainer" style="display: none;" class="mt-4">
-                                        <p class="text-gray-700 mb-2">Password: <span id="innovationDisplayedPassword"></span> (for demonstration purposes only)</p>
-                                        <a id="innovationDownloadLink" href="" target="_blank" download class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
-                                            Download Document <i class="fas fa-download ml-2"></i>
-                                        </a>
                                     </div>
-                                </div>
                             </div>
                         </div>
-                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
         <section id="activities" class="page-section hidden" data-page="activities">
             <div class="py-16 px-6 md:px-10 bg-white rounded-lg shadow-md mx-auto my-10 max-w-6xl">
@@ -552,7 +545,8 @@
                 </div>
             </div>
         </section>
-    </div> <div id="passwordModal" class="password-modal" style="display: none;">
+    </div>
+    <div id="passwordModal" class="password-modal" style="display: none;">
         <div class="password-modal-content">
             <h4 id="modalTitle" class="text-xl font-semibold mb-4">Enter Password to View Document</h4>
             <input type="password" id="docPassword" class="px-3 py-2 border border-gray-300 rounded-md w-full mb-4" placeholder="Password">
@@ -677,7 +671,9 @@
             const procedureDocButton = document.getElementById('procedureDocButton');
             if (procedureDocButton) {
                 procedureDocButton.addEventListener('click', function() {
-                    promptPasswordAndOpenDoc('Steps in Certifying Training Record.pdf', 'certify123', 'processes');
+                    // This button's content area already has the download link
+                    // The promptPasswordAndOpenDoc needs to handle showing/hiding that specific div.
+                    promptPasswordAndOpenDoc('Steps in Certifying Training Record.pdf', 'certify123', 'processes', 'pdfActionContainer'); // Pass the ID of its specific action container
                 });
             }
 
@@ -685,7 +681,7 @@
             const innovationDocButton = document.getElementById('innovationDocButton');
             if (innovationDocButton) {
                 innovationDocButton.addEventListener('click', function() {
-                    // Correct filename with .pdf extension and ensure it's passed correctly
+                    // No separate action container in HTML for innovation, it will use the main modal's.
                     promptPasswordAndOpenDoc('Automating M R report Prosedures.pdf', 'certify123', 'innovation');
                 });
             }
@@ -845,7 +841,7 @@
         }
 
         // Function to prompt password and open/download document
-        function promptPasswordAndOpenDoc(docPath, correctPassword, returnPageId) {
+        function promptPasswordAndOpenDoc(docPath, correctPassword, returnPageId, specificPdfActionContainerId = null) {
             // Reset modal elements' states
             modalTitle.innerText = 'Enter Password to View Document';
             docPassword.value = '';
@@ -854,12 +850,22 @@
             cancelPasswordBtn.style.display = 'inline-block';
             cancelPasswordBtn.innerText = 'Cancel';
             passwordError.classList.add('hidden');
+
+            // Hide the universal modal's PDF action container by default
             pdfActionContainerInModal.style.display = 'none';
 
-            // Set the download link href and displayed password hint
-            downloadLink.href = docPath; // THIS IS THE CRITICAL LINE FOR THE HREF
-            // Ensure the download attribute has the correct filename
-            downloadLink.setAttribute('download', docPath.split('/').pop()); // e.g., "Steps in Certifying Training Record.pdf"
+            // Hide any specific, in-page PDF action containers
+            if (document.getElementById('pdfActionContainer')) {
+                document.getElementById('pdfActionContainer').style.display = 'none';
+            }
+            if (document.getElementById('innovationPdfActionContainer')) {
+                document.getElementById('innovationPdfActionContainer').style.display = 'none';
+            }
+
+
+            // Set the download link href and displayed password hint for the universal modal
+            downloadLink.href = docPath;
+            downloadLink.setAttribute('download', docPath.split('/').pop());
             displayedPasswordSpan.textContent = `\`${correctPassword}\``;
 
             passwordModal.style.display = 'flex'; // Make modal visible
@@ -879,7 +885,23 @@
                     docPassword.style.display = 'none';
                     submitPasswordBtn.style.display = 'none';
                     cancelPasswordBtn.style.display = 'none';
-                    pdfActionContainerInModal.style.display = 'block';
+
+                    // Determine which PDF action container to show
+                    if (specificPdfActionContainerId) {
+                        // Show the specific in-page container if provided
+                        const specificContainer = document.getElementById(specificPdfActionContainerId);
+                        if (specificContainer) {
+                            specificContainer.style.display = 'block';
+                            // Hide the universal modal's container if a specific one is shown
+                            pdfActionContainerInModal.style.display = 'none';
+                            // Also hide modal controls if showing in-page
+                            closeModalAfterDownloadBtn.style.display = 'none';
+                        }
+                    } else {
+                        // Otherwise, show the universal modal's container
+                        pdfActionContainerInModal.style.display = 'block';
+                        closeModalAfterDownloadBtn.style.display = 'block';
+                    }
                 } else {
                     passwordError.classList.remove('hidden');
                 }
@@ -887,6 +909,13 @@
 
             cancelPasswordBtn.onclick = function() {
                 passwordModal.style.display = 'none';
+                // Ensure specific containers are hidden if modal is cancelled
+                if (document.getElementById('pdfActionContainer')) {
+                    document.getElementById('pdfActionContainer').style.display = 'none';
+                }
+                if (document.getElementById('innovationPdfActionContainer')) {
+                    document.getElementById('innovationPdfActionContainer').style.display = 'none';
+                }
             };
 
             closeModalAfterDownloadBtn.onclick = function() {
@@ -905,6 +934,5 @@
             }
         }
     </script>
-
 </body>
 </html>
