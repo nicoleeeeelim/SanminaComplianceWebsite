@@ -480,8 +480,8 @@
                                 <div class="p-4 text-gray-700">
                                     <p class="mb-2">Access the detailed document outlining the procedures for automating MR reports using AI. This document is password-protected for security.</p>
                                     <div id="innovationPdfActionContainer" style="display: none;" class="mt-4">
-                                        <p class="text-gray-700 mb-2">Password: `certify123` (for demonstration purposes only)</p>
-                                        <a href="Automating M R report Prosedures.pdf" target="_blank" download class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
+                                        <p class="text-gray-700 mb-2">Password: <span id="innovationPasswordHint"></span> (for demonstration purposes only)</p>
+                                        <a id="innovationDownloadLink" href="Automating M R report Prosedures.pdf" target="_blank" download class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
                                             Download Document <i class="fas fa-download ml-2"></i>
                                         </a>
                                     </div>
@@ -826,7 +826,7 @@
                         <button id="cancelPassword" class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition duration-300">Cancel</button>
                         <p id="passwordError" class="text-red-500 text-sm mt-2 hidden">Incorrect password. Please try again.</p>
                         <div id="pdfActionContainerInModal" style="display: none;" class="mt-4">
-                            <p class="text-gray-700 mb-2">Password: \`certify123\` (for demonstration purposes only)</p>
+                            <p class="text-gray-700 mb-2">Password: <span id="displayedPassword"></span> (for demonstration purposes only)</p>
                             <a id="downloadLink" href="" target="_blank" download class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
                                 Download Document <i class="fas fa-download ml-2"></i>
                             </a>
@@ -846,6 +846,7 @@
             const pdfActionContainerInModal = document.getElementById('pdfActionContainerInModal');
             const downloadLink = document.getElementById('downloadLink');
             const closeModalAfterDownloadBtn = document.getElementById('closeModalAfterDownload');
+            const displayedPasswordSpan = document.getElementById('displayedPassword'); // New reference for the span
 
 
             // Reset modal state
@@ -858,6 +859,8 @@
             passwordError.classList.add('hidden');
             pdfActionContainerInModal.style.display = 'none';
             downloadLink.href = docPath; // Set the correct document path
+            displayedPasswordSpan.textContent = `\`${correctPassword}\``; // Set the hint to the actual correct password passed
+
 
             modal.style.display = 'flex'; // Make modal visible
 
