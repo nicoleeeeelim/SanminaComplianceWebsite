@@ -660,12 +660,11 @@
                 });
             });
 
-            // Get the specific button for the procedure document and attach event listener
+            // Attach event listener for the password-protected document button
             const procedureDocButton = document.getElementById('procedureDocButton');
             if (procedureDocButton) {
                 procedureDocButton.addEventListener('click', function() {
-                    // This logic is now handled by the promptPasswordAndOpenDoc function
-                    // which is called when this button is clicked.
+                    promptPasswordAndOpenDoc('Steps in Certifying Training Record.pdf', 'certify123');
                 });
             }
 
