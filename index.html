@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QA Compliance Training</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome CDN for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Universal Box-Sizing Reset for consistent layout across browsers */
@@ -28,7 +25,7 @@
         /* Custom animation for button hover */
         .btn-hover-effect:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 44px 6px -2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
         /* Floating navigation buttons (Top, End, Next, Prev) */
         .floating-btn {
@@ -178,13 +175,10 @@
 </head>
 <body class="text-gray-800">
 
-    <!-- Header Section -->
     <header class="bg-white shadow-md py-4 px-6 md:px-10 sticky top-0 z-50">
         <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
             <div class="flex items-center mb-4 md:mb-0">
-                <!-- Sanmina Logo - Updated src to new image -->
                 <img src="sanmina logo.png" alt="Sanmina Official Logo" class="h-12 w-auto mr-3">
-                <!-- Header Title - Updated text content -->
                 <h1 class="text-2xl font-bold text-red-800">QA Compliance Training</h1>
             </div>
             <nav class="flex flex-col md:flex-row items-center">
@@ -206,11 +200,8 @@
         </div>
     </header>
 
-    <!-- Main Content Area - Page Containers -->
     <div id="page-content">
-        <!-- Home & About Us Combined Section -->
         <section id="home-about" class="page-section active" data-page="home-about">
-            <!-- Home Content -->
             <div class="bg-gradient-to-r from-red-800 to-black text-white py-20 px-6 md:px-10 text-center rounded-b-lg shadow-lg">
                 <div class="container mx-auto max-w-4xl">
                     <h2 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">Empowering Quality Through Compliance Training</h2>
@@ -219,7 +210,6 @@
                 </div>
             </div>
 
-            <!-- About Us Content -->
             <div class="py-16 px-6 md:px-10 bg-white rounded-lg shadow-md mx-auto my-10 max-w-6xl">
                 <div class="container mx-auto">
                     <h3 class="text-3xl font-bold text-center text-red-800 mb-10">About Our Quality Assurance Department</h3>
@@ -235,7 +225,6 @@
                     </div>
 
                     <h4 class="text-xl font-semibold text-red-700 mb-4 text-center">Our Department Structure:</h4>
-                    <!-- Flowchart SVG -->
                     <div class="w-full flex justify-center p-2 bg-gray-50 rounded-lg">
                         <svg viewBox="0 0 250 360" class="w-full h-auto max-w-[200px]">
                             <defs>
@@ -244,117 +233,94 @@
                                 </marker>
                             </defs>
 
-                            <!-- Quality Director -->
                             <rect x="50" y="20" width="150" height="40" class="flowchart-node" />
                             <text x="125" y="40" class="flowchart-text">Quality Director</text>
                             <line x1="125" y1="60" x2="125" y2="80" class="flowchart-line" />
 
-                            <!-- Senior Manager (QA) -->
                             <rect x="50" y="80" width="150" height="40" class="flowchart-node" />
                             <text x="125" y="100" class="flowchart-text">Senior Manager (QA)</text>
                             <line x1="125" y1="120" x2="125" y2="140" class="flowchart-line" />
 
-                            <!-- Staff Engineer -->
                             <rect x="50" y="140" width="150" height="40" class="flowchart-node" />
                             <text x="125" y="160" class="flowchart-text">Staff Engineer</text>
                             <text x="125" y="175" class="flowchart-text">(Calib. & Valid.)</text>
                             <line x1="125" y1="180" x2="125" y2="200" class="flowchart-line" />
 
-                            <!-- Compliance Training -->
                             <rect x="50" y="200" width="150" height="40" class="flowchart-node" />
                             <text x="125" y="220" class="flowchart-text">Compliance Training</text>
                             <line x1="125" y1="240" x2="125" y2="260" class="flowchart-line" />
 
-                            <!-- Training Supervisor -->
                             <rect x="50" y="260" width="150" height="40" class="flowchart-node" />
                             <text x="125" y="280" class="flowchart-text">Training Supervisor</text>
                             <line x1="125" y1="300" x2="125" y2="320" class="flowchart-line" />
 
-                            <!-- Intern (You!) -->
                             <rect x="50" y="320" width="150" height="40" class="flowchart-node" />
                             <text x="125" y="340" class="flowchart-text">Intern (You!)</text>
                         </svg>
-                            </div>
-                            <!-- End Flowchart SVG -->
-                            <p class="text-lg leading-relaxed mt-8">
-                                We are committed to maintaining strict adherence to industry regulations, internal policies, and customer requirements. Through comprehensive compliance training, we equip our team members with the knowledge and tools necessary to identify, mitigate, and prevent quality deviations, ensuring every product meets the highest global standards.
-                            </p>
-                        </div>
                     </div>
+                    <p class="text-lg leading-relaxed mt-8">
+                        We are committed to maintaining strict adherence to industry regulations, internal policies, and customer requirements. Through comprehensive compliance training, we equip our team members with the knowledge and tools necessary to identify, mitigate, and prevent quality deviations, ensuring every product meets the highest global standards.
+                    </p>
                 </div>
-            </section>
+            </div>
+        </section>
 
-        <!-- Training Modules Section -->
         <section id="training" class="page-section hidden" data-page="training">
             <div class="py-16 px-6 md:px-10 bg-amber-50 rounded-lg shadow-md mx-auto my-10 max-w-6xl">
                 <div class="container mx-auto">
                     <h3 class="text-3xl font-bold text-center text-red-800 mb-10">Our Compliance Training Modules</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <!-- Module 1 -->
                         <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
                             <div class="text-center text-red-700 mb-4">
-                                <i class="fas fa-certificate text-4xl"></i> <!-- ISO 9001 Icon -->
-                            </div>
+                                <i class="fas fa-certificate text-4xl"></i> </div>
                             <h4 class="text-xl font-semibold text-red-800 mb-3">ISO 9001:2015 Standards</h4>
                             <p class="text-gray-700">
                                 In-depth training on the principles and requirements of ISO 9001:2015, focusing on quality management systems and continuous improvement processes. This includes coordination and preparation of materials for compliance and ethics training.
                             </p>
                         </div>
-                        <!-- Module 2 -->
                         <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
                             <div class="text-center text-red-700 mb-4">
-                                <i class="fas fa-gavel text-4xl"></i> <!-- Regulatory Compliance Icon -->
-                            </div>
+                                <i class="fas fa-gavel text-4xl"></i> </div>
                             <h4 class="text-xl font-semibold text-red-800 mb-3">Regulatory Compliance (e.g., FDA, RoHS, REACH)</h4>
                             <p class="text-gray-700">
                                 Understanding and adhering to specific industry regulations relevant to our products and markets, ensuring legal and ethical operations. This training ensures compliance with regulatory requirements to achieve high standards of quality.
                             </p>
                         </div>
-                        <!-- Module 3 -->
                         <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
                             <div class="text-center text-red-700 mb-4">
-                                <i class="fas fa-clipboard-check text-4xl"></i> <!-- Internal Audit Icon -->
-                            </div>
+                                <i class="fas fa-clipboard-check text-4xl"></i> </div>
                             <h4 class="text-xl font-semibold text-red-800 mb-3">Internal Audit Procedures</h4>
                             <p class="text-gray-700">
                                 Training on conducting effective internal audits to assess compliance, identify non-conformities, and drive corrective actions. Uncertified training records can result in non-conformity and impact manufacturer certification.
                             </p>
                         </div>
-                        <!-- Module 4 -->
                         <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
                             <div class="text-center text-red-700 mb-4">
-                                <i class="fas fa-shield-alt text-4xl"></i> <!-- Risk Management Icon -->
-                            </div>
+                                <i class="fas fa-shield-alt text-4xl"></i> </div>
                             <h4 class="text-xl font-semibold text-red-800 mb-3">Risk Management in QA</h4>
                             <p class="text-gray-700">
                                 Techniques and methodologies for identifying, assessing, and mitigating quality-related risks throughout the product lifecycle. We review and update training matrices regularly.
                             </p>
                         </div>
-                        <!-- Module 5 -->
                         <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
                             <div class="text-center text-red-700 mb-4">
-                                <i class="fas fa-truck-loading text-4xl"></i> <!-- Supplier Quality Icon -->
-                            </div>
+                                <i class="fas fa-truck-loading text-4xl"></i> </div>
                             <h4 class="text-xl font-semibold text-red-800 mb-3">Supplier Quality Management</h4>
                             <p class="text-gray-700">
                                 Ensuring quality and compliance across our supply chain through robust supplier evaluation, monitoring, and development programs. We also participate in various projects such as revamping technical components of company orientation slides.
                             </p>
                         </div>
-                        <!-- Module 6 -->
                         <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
                             <div class="text-center text-red-700 mb-4">
-                                <i class="fas fa-file-alt text-4xl"></i> <!-- Data Integrity Icon -->
-                            </div>
+                                <i class="fas fa-file-alt text-4xl"></i> </div>
                             <h4 class="text-xl font-semibold text-red-800 mb-3">Data Integrity and Documentation</h4>
                             <p class="text-gray-700">
                                 Best practices for maintaining accurate, complete, and consistent data records essential for compliance and traceability. This includes ensuring training records meet GDP compliance and timely filing.
                             </p>
                         </div>
-                        <!-- MDSAP Module -->
                         <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
                             <div class="text-center text-red-700 mb-4">
-                                <i class="fas fa-stethoscope text-4xl"></i> <!-- Medical Device Icon -->
-                            </div>
+                                <i class="fas fa-stethoscope text-4xl"></i> </div>
                             <h4 class="text-xl font-semibold text-red-800 mb-3">MDSAP: Medical Device Single Audit Program</h4>
                             <p class="text-gray-700">
                                 Our compliance training prepares us for yearly MDSAP audits, ensuring employees are trained and compliant with regulatory requirements. This program is crucial for achieving high standards of quality and maintaining manufacturer certification and market access.
@@ -365,14 +331,12 @@
             </div>
         </section>
 
-        <!-- Our Processes & Tools Section -->
         <section id="processes" class="page-section hidden" data-page="processes">
             <div class="py-16 px-6 md:px-10 bg-white rounded-lg shadow-md mx-auto my-10 max-w-6xl">
                 <div class="container mx-auto">
                     <h3 class="text-3xl font-bold text-center text-red-800 mb-10">Training Workflow</h3>
 
                     <div class="space-y-4">
-                        <!-- Employee Training Certification Accordion -->
                         <div class="accordion-item">
                             <button class="accordion-button">
                                 <span>Employee Training Certification</span>
@@ -382,9 +346,9 @@
                                 <div class="p-4 text-gray-700">
                                     <p class="mb-2">Our main task involves the entry and certification of training records. This ensures that employees are adequately trained and compliant with regulatory requirements.</p>
                                     <ul class="list-disc list-inside ml-4">
-                                        <li>Ensure employee, training module, and training date are correct when entering data into "<a href="https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx" target="_blank" class="text-red-700 hover:underline">SmartSolve</a>" (<span class="text-sm text-gray-500 break-all">https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx</span>).</li>
+                                        [cite_start]<li>Ensure employee, training module, and training date are correct when entering data into "<a href="https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx" target="_blank" class="text-red-700 hover:underline">SmartSolve</a>" [cite: 10] (<span class="text-sm text-gray-500 break-all">https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx</span>).</li>
                                         <li>Certify courses after a course attendance is emailed by managers for certification.</li>
-                                        <li>Utilize "<a href="https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx" target="_blank" class="text-red-700 hover:underline">SmartSolve</a>" and "<a href="https://hsv1amappw17.sanmina.com/siteminderagent/forms/login.fcc?TYPE=33554433&REALMOID=06-de5eabc8-da70-44d8-b688-9a3f1d60a97f&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=-SM-lwoo2YEXY4Ofz%2fXzgZ1Ki0dqd67eWUU1ATC98rmdPv0%2fl8coW1gHFwr9v7ESbUSC&TARGET=-SM-HTTP%3a%2f%2fhsv1amappw17%2esanmina%2ecom%2fmesweb%2fauthenticationredirect%2fredirect%2eashx%3fReturnUrl%3dhttp-%3a-%2f-%2fmesweb%2ecorptraining%2esanmina%2ecom-%2fDefault%2easpx" target="_blank" class="text-red-700 hover:underline">MESWeb</a>" (<span class="text-sm text-gray-500 break-all">https://hsv1amappw17.sanmina.com/siteminderagent/forms/login.fcc?TYPE=33554433&REALMOID=06-de5eabc8-da70-44d8-b688-9a3f1d60a97f&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=-SM-lwoo2YEXY4Ofz%2fXzgZ1Ki0dqd67eWUU1ATC98rmdPv0%2fl8coW1gHFwr9v7ESbUSC&TARGET=-SM-HTTP%3a%2f%2fhsv1amappw17%2esanmina%2ecom%2fmesweb%2fauthenticationredirect%2fredirect%2eashx%3fReturnUrl%3dhttp-%3a-%2f-%2fmesweb%2ecorptraining%2esanmina%2ecom-%2fDefault%2easpx</span>) for daily work for entry of training record.</li>
+                                        [cite_start]<li>Utilize "<a href="https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx" target="_blank" class="text-red-700 hover:underline">SmartSolve</a>" [cite: 10] and "<a href="https://hsv1amappw17.sanmina.com/siteminderagent/forms/login.fcc?TYPE=33554433&REALMOID=06-de5eabc8-da70-44d8-b688-9a3f1d60a97f&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=-SM-lwoo2YEXY4Ofz%2fXzgZ1Ki0dqd67eWUU1ATC98rmdPv0%2fl8coW1gHFwr9v7ESbUSC&TARGET=-SM-HTTP%3a%2f%2fhsv1amappw17%2esanmina%2ecom%2fmesweb%2fauthenticationredirect%2fredirect%2eashx%3fReturnUrl%3dhttp-%3a-%2f-%2fmesweb%2ecorptraining%2esanmina%2ecom-%2fDefault%2easpx" target="_blank" class="text-red-700 hover:underline">MESWeb</a>" (<span class="text-sm text-gray-500 break-all">https://hsv1amappw17.sanmina.com/siteminderagent/forms/login.fcc?TYPE=33554433&REALMOID=06-de5eabc8-da70-44d8-b688-9a3f1d60a97f&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=-SM-lwoo2YEXY4Ofz%2fXzgZ1Ki0dqd67eWUU1ATC98rmdPv0%2fl8coW1gHFwr9v7ESbUSC&TARGET=-SM-HTTP%3a%2f%2fhsv1amappw17%2esanmina%2ecom%2fmesweb%2fauthenticationredirect%2fredirect%2eashx%3fReturnUrl%3dhttp-%3a-%2f-%2fmesweb%2ecorptraining%2esanmina%2ecom-%2fDefault%2easpx</span>) for daily work for entry of training record.</li>
                                         <li>Certification of Existing Courses.</li>
                                         <li>Certification of New Courses (Test Procedures etc.).</li>
                                         <li>Add or deactivate training requirements as necessary.</li>
@@ -393,7 +357,6 @@
                             </div>
                         </div>
 
-                        <!-- SmartSolve Accordion -->
                         <div class="accordion-item">
                             <button class="accordion-button">
                                 <span><a href="https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx" target="_blank" class="text-red-700 hover:underline">SmartSolve</a> System</span>
@@ -401,7 +364,7 @@
                             </button>
                             <div class="accordion-content">
                                 <div class="p-4 text-gray-700">
-                                    <p class="mb-2"><a href="https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx" target="_blank" class="text-red-700 hover:underline">SmartSolve</a> (<span class="text-sm text-gray-500 break-all">https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx</span>) is a critical system for managing and certifying training records. We ensure that only those who meet the passing criteria of 80% in SmartSolve are certified.</p>
+                                    [cite_start]<p class="mb-2"><a href="https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx" target="_blank" class="text-red-700 hover:underline">SmartSolve</a> [cite: 10] (<span class="text-sm text-gray-500 break-all">https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx</span>) is a critical system for managing and certifying training records. We ensure that only those who meet the passing criteria of 80% in SmartSolve are certified.</p>
                                     <p class="mb-2">This system allows us to:</p>
                                     <ul class="list-disc list-inside ml-4">
                                         <li>Enter and manage employee training data.</li>
@@ -412,7 +375,6 @@
                             </div>
                         </div>
 
-                        <!-- SanminaNet & NAMETOOL Accordion -->
                         <div class="accordion-item">
                             <button class="accordion-button">
                                 <span><a href="https://sanminanet.sanmina.com/" target="_blank" class="text-red-700 hover:underline">SanminaNet</a> & NAMETOOL</span>
@@ -429,7 +391,6 @@
                             </div>
                         </div>
 
-                        <!-- Paper Certification & Assessment Accordion -->
                         <div class="accordion-item">
                             <button class="accordion-button">
                                 <span>Paper Certification & Assessment</span>
@@ -439,7 +400,7 @@
                                 <div class="p-4 text-gray-700">
                                     <p class="mb-2">Our team is responsible for assessing course assessment papers upon submission and updating training records for MDSAP.</p>
                                     <ul class="list-disc list-inside ml-4">
-                                        <li>Only certify those who meet passing criteria of 80% in <a href="https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx" target="_blank" class="text-red-700 hover:underline">SmartSolve</a> (<span class="text-sm text-gray-500 break-all">https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx</span>).</li>
+                                        [cite_start]<li>Only certify those who meet passing criteria of 80% in <a href="https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx" target="_blank" class="text-red-700 hover:underline">SmartSolve</a> [cite: 10] (<span class="text-sm text-gray-500 break-all">https://pilgrimsmarttrain.sanmina.com/SmartSolve/login.aspx</span>).</li>
                                         <li>Ensure employee training module and training dates are correct when entering training record into <a href="https://hsv1amappw17.sanmina.com/siteminderagent/forms/login.fcc?TYPE=33554433&REALMOID=06-de5eabc8-da70-44d8-b688-9a3f1d60a97f&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=-SM-lwoo2YEXY4Ofz%2fXzgZ1Ki0dqd67eWUU1ATC98rmdPv0%2fl8coW1gHFwr9v7ESbUSC&TARGET=-SM-HTTP%3a%2f%2fhsv1amappw17%2esanmina%2ecom%2fmesweb%2fauthenticationredirect%2fredirect%2eashx%3fReturnUrl%3dhttp-%3a-%2f-%2fmesweb%2ecorptraining%2esanmina%2ecom-%2fDefault%2easpx" target="_blank" class="text-red-700 hover:underline">MESWeb</a> (<span class="text-sm text-gray-500 break-all">https://hsv1amappw17.sanmina.com/siteminderagent/forms/login.fcc?TYPE=33554433&REALMOID=06-de5eabc8-da70-44d8-b688-9a3f1d60a97f&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=-SM-lwoo2YEXY4Ofz%2fXzgZ1Ki0dqd67eWUU1ATC98rmdPv0%2fl8coW1gHFwr9v7ESbUSC&TARGET=-SM-HTTP%3a%2f%2fhsv1amappw17%2esanmina%2ecom%2fmesweb%2fauthenticationredirect%2fredirect%2eashx%3fReturnUrl%3dhttp-%3a-%2f-%2fmesweb%2ecorptraining%2esanmina%2ecom-%2fDefault%2easpx</span>).</li>
                                         <li>Assessment papers must comply with Good Documentation Practices (GDP), avoiding violations like overwriting.</li>
                                         <li>Ensure up-to-date changes for assessment papers upon new revision release.</li>
@@ -447,19 +408,17 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Accordion for Procedure Document -->
                         <div class="accordion-item">
                             <button id="procedureDocButton" class="accordion-button">
-                                <span>Procedure on Certifying Training Record</span>
-                                <i class="fas fa-lock icon ml-2"></i> <!-- Lock icon -->
-                                <i class="fas fa-chevron-down icon ml-auto"></i>
+                                [cite_start]<span>Procedure on Certifying Training Record</span> [cite: 1]
+                                <i class="fas fa-lock icon ml-2"></i> <i class="fas fa-chevron-down icon ml-auto"></i>
                             </button>
                             <div class="accordion-content">
                                 <div class="p-4 text-gray-700">
                                     <p class="mb-2">Access the detailed procedure document for certifying training records. This document is password-protected for security.</p>
                                     <div id="pdfActionContainer" style="display: none;" class="mt-4">
                                         <p class="text-gray-700 mb-2">Password: `certify123` (for demonstration purposes only)</p>
-                                        <a href="Steps in Certifying Training Record.pdf" download class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
+                                        <a href="Steps in Certifying Training Record.pdf" target="_blank" download class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
                                             Download Document <i class="fas fa-download ml-2"></i>
                                         </a>
                                     </div>
@@ -471,7 +430,6 @@
             </div>
         </section>
 
-        <!-- Innovation & Growth Section -->
         <section id="innovation" class="page-section hidden" data-page="innovation">
             <div class="py-16 px-6 md:px-10 bg-amber-50 rounded-lg shadow-md mx-auto my-10 max-w-6xl">
                 <div class="container mx-auto">
@@ -515,15 +473,13 @@
             </div>
         </section>
 
-        <!-- Team Activities Section -->
         <section id="activities" class="page-section hidden" data-page="activities">
             <div class="py-16 px-6 md:px-10 bg-white rounded-lg shadow-md mx-auto my-10 max-w-6xl">
                 <div class="container mx-auto">
                     <h3 class="text-3xl font-bold text-center text-red-800 mb-10">Our Team in Action</h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <!-- Activity 1: Internal Audit Session -->
                         <div class="bg-gray-100 p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-center space-x-6">
-                            <img src="EGH325_Nicole Lim_221066J_MidPresentation.pdf?page=6&inline=true" alt="Internal Audit Session" class="rounded-full w-24 h-24 md:w-32 md:h-32 object-cover mb-4 md:mb-0">
+                            <img src="https://placehold.co/150x150/CCE0FF/003366?text=Audit" alt="Internal Audit Session" class="rounded-full w-24 h-24 md:w-32 md:h-32 object-cover mb-4 md:mb-0">
                             <div>
                                 <h4 class="text-xl font-semibold text-red-700 mb-2">Internal Audit Session</h4>
                                 <p class="text-gray-700">
@@ -531,7 +487,6 @@
                                 </p>
                             </div>
                         </div>
-                        <!-- Activity 2: Continuous Improvement Workshop -->
                         <div class="bg-gray-100 p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-center space-x-6">
                             <img src="https://placehold.co/150x150/CCE0FF/003366?text=Training" alt="Continuous Improvement Workshop" class="rounded-full w-24 h-24 md:w-32 md:h-32 object-cover mb-4 md:mb-0">
                             <div>
@@ -541,7 +496,6 @@
                                 </p>
                             </div>
                         </div>
-                        <!-- Activity 3: New Certification Achievement -->
                         <div class="bg-gray-100 p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-center space-x-6">
                             <img src="https://placehold.co/150x150/CCE0FF/003366?text=Certification" alt="New Certification Achievement" class="rounded-full w-24 h-24 md:w-32 md:h-32 object-cover mb-4 md:mb-0">
                             <div>
@@ -551,9 +505,8 @@
                                 </p>
                             </div>
                         </div>
-                        <!-- Activity 4: Orientation Trainings -->
                         <div class="bg-gray-100 p-6 rounded-lg shadow-lg flex flex-col md:flex-row items-center space-x-6">
-                            <img src="EGH325_Nicole Lim_221066J_MidPresentation.pdf?page=12&inline=true" alt="Orientation Training" class="rounded-full w-24 h-24 md:w-32 md:h-32 object-cover mb-4 md:mb-0">
+                            <img src="https://placehold.co/150x150/CCE0FF/003366?text=Orientation" alt="Orientation Training" class="rounded-full w-24 h-24 md:w-32 md:h-32 object-cover mb-4 md:mb-0">
                             <div>
                                 <h4 class="text-xl font-semibold text-red-700 mb-2">New Employee Orientation Trainings</h4>
                                 <p class="text-gray-700">
@@ -566,7 +519,6 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="page-section hidden" data-page="contact">
             <div class="py-16 px-6 md:px-10 bg-gradient-to-r from-red-800 to-black text-white rounded-t-lg shadow-lg mx-auto my-10 max-w-6xl">
                 <div class="container mx-auto max-w-3xl text-center">
@@ -581,16 +533,12 @@
                 </div>
             </div>
         </section>
-    </div> <!-- End of #page-content -->
-
-    <!-- Footer Section -->
-    <footer class="bg-black text-white py-6 px-6 md:px-10 text-center rounded-b-lg">
+    </div> <footer class="bg-black text-white py-6 px-6 md:px-10 text-center rounded-b-lg">
         <div class="container mx-auto">
             <p>&copy; 2024 Sanmina Quality Assurance Department. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Floating Navigation Buttons -->
     <button onclick="topFunction()" id="backToTopBtn" class="floating-btn" title="Go to top">
         <i class="fas fa-arrow-up"></i> Top
     </button>
@@ -606,7 +554,6 @@
 
     <script>
         // Get the buttons
-        // Changed 'let' to 'var' to prevent re-declaration errors if the script is run multiple times in the environment
         var backToTopBtn = document.getElementById("backToTopBtn");
         var endOfPageBtn = document.getElementById("endOfPageBtn");
         var prevPageBtn = document.getElementById("prevPageBtn");
@@ -664,7 +611,7 @@
             const procedureDocButton = document.getElementById('procedureDocButton');
             if (procedureDocButton) {
                 procedureDocButton.addEventListener('click', function() {
-                    promptPasswordAndOpenDoc('Steps in Certifying Training Record.pdf', 'certify123');
+                    promptPasswordAndOpenDoc('Steps in Certifying Training Record.pdf', 'certify123'); // Pass the filename and the correct password
                 });
             }
 
@@ -712,7 +659,7 @@
                 currentPageIndex++;
                 showPage(pageOrder[currentPageIndex]);
             }
-            }
+        }
 
         /**
          * Navigates to the previous page in the defined order.
@@ -818,38 +765,60 @@
 
         // Function to prompt password and open/download document
         function promptPasswordAndOpenDoc(docPath, correctPassword) {
-            const modal = document.createElement('div');
-            modal.className = 'password-modal';
-            modal.innerHTML = `
-                <div class="password-modal-content">
-                    <h4 id="modalTitle" class="text-xl font-semibold mb-4">Enter Password to View Document</h4>
-                    <input type="password" id="docPassword" class="px-3 py-2 border border-gray-300 rounded-md w-full mb-4" placeholder="Password">
-                    <button id="submitPassword" class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300 mr-2">Submit</button>
-                    <button onclick="this.parentNode.parentNode.remove()" class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition duration-300">Cancel</button>
-                    <p id="passwordError" class="text-red-500 text-sm mt-2 hidden">Incorrect password. Please try again.</p>
-                    <div id="pdfActionContainer" style="display: none;" class="mt-4">
-                        <p class="text-gray-700 mb-2">Password: ` + '`' + correctPassword + '`' + ` (for demonstration purposes only)</p>
-                        <a href="${docPath}" target="_blank" download class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
-                            Download Document <i class="fas fa-download ml-2"></i>
-                        </a>
+            // Create the modal element if it doesn't exist
+            let modal = document.getElementById('passwordModal');
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.id = 'passwordModal';
+                modal.className = 'password-modal';
+                modal.innerHTML = `
+                    <div class="password-modal-content">
+                        <h4 id="modalTitle" class="text-xl font-semibold mb-4">Enter Password to View Document</h4>
+                        <input type="password" id="docPassword" class="px-3 py-2 border border-gray-300 rounded-md w-full mb-4" placeholder="Password">
+                        <button id="submitPassword" class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300 mr-2">Submit</button>
+                        <button id="cancelPassword" class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 transition duration-300">Cancel</button>
+                        <p id="passwordError" class="text-red-500 text-sm mt-2 hidden">Incorrect password. Please try again.</p>
+                        <div id="pdfActionContainerInModal" style="display: none;" class="mt-4">
+                            <p class="text-gray-700 mb-2">Password: \`certify123\` (for demonstration purposes only)</p>
+                            <a id="downloadLink" href="" target="_blank" download class="bg-red-700 text-white px-4 py-2 rounded-md hover:bg-red-800 transition duration-300">
+                                Download Document <i class="fas fa-download ml-2"></i>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            `;
-            document.body.appendChild(modal);
+                `;
+                document.body.appendChild(modal);
+            }
+
+            // Reset modal state
+            document.getElementById('modalTitle').innerText = 'Enter Password to View Document';
+            document.getElementById('docPassword').value = '';
+            document.getElementById('docPassword').style.display = 'block';
+            document.getElementById('submitPassword').style.display = 'inline-block';
+            document.getElementById('cancelPassword').style.display = 'inline-block';
+            document.getElementById('passwordError').classList.add('hidden');
+            document.getElementById('pdfActionContainerInModal').style.display = 'none';
+            document.getElementById('downloadLink').href = docPath; // Set the correct document path
+
             modal.style.display = 'flex'; // Make modal visible
 
+            // Event listener for Submit button inside the modal
             document.getElementById('submitPassword').onclick = function() {
                 const enteredPassword = document.getElementById('docPassword').value.trim();
                 if (enteredPassword === correctPassword) {
                     document.getElementById('passwordError').classList.add('hidden');
-                    document.getElementById('modalTitle').innerText = 'Document Ready for Download'; // Change title
+                    document.getElementById('modalTitle').innerText = 'Document Ready for Download';
                     document.getElementById('docPassword').style.display = 'none';
                     document.getElementById('submitPassword').style.display = 'none';
-                    modal.querySelector('.bg-gray-500').style.display = 'none'; // Hide cancel button
-                    document.getElementById('pdfActionContainer').style.display = 'block'; // Show the link container
+                    document.getElementById('cancelPassword').style.display = 'none'; // Hide cancel button after successful verification
+                    document.getElementById('pdfActionContainerInModal').style.display = 'block'; // Show the download link container
                 } else {
                     document.getElementById('passwordError').classList.remove('hidden');
                 }
+            };
+
+            // Event listener for Cancel button inside the modal
+            document.getElementById('cancelPassword').onclick = function() {
+                modal.style.display = 'none'; // Hide the modal
             };
 
             // Allow pressing Enter key in password input
